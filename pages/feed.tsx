@@ -1,26 +1,71 @@
+import { useAppDispatch } from "@/hooks"
 import CreatePostCard from "@/components/CreatePostCard"
 import PostCard from "@/components/PostCard"
 import ProfileCard from "@/components/ProfileCard"
+import { usersActions } from "@/slices/usersSlice"
 import { Post } from "@/types/postType"
-import { Box, Container, Divider, Grid, Stack } from "@mui/material"
+import { CircularProgress, Container, Divider, Grid, Stack } from "@mui/material"
 import Head from "next/head"
 import * as React from "react"
+import RecommendedUsersCard from "@/components/RecommendedUsersCard"
 
 export default function Feed() {
-	const posts = React.useMemo( () => {
-		const temp: Post[] = []
+	/**
+	 * Hooks
+	 */
+	const dispatch = useAppDispatch()
+
+	/**
+	 * State
+	 */
+	// State to hold a list of posts for the user's feed
+	const [posts, setPosts] = React.useState( [] as Post[] )
+	// State to hold if the feed is loading
+	const [ loading, setLoading] = React.useState( true )
+
+	/**
+	 * Effects
+	 */
+	// Initial render - initializes the users in the Redux store and fetches the user's feed from the API
+	React.useEffect( () => {
+		dispatch( usersActions.updateUser( {
+			firstName: "Jacob",
+			lastName: "Williams",
+			imageUrl: "https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80",
+			userId: 1,
+			username: "jfw2020"
+		} ) )
+		dispatch( usersActions.updateUser( {
+			firstName: "Trent",
+			lastName: "Powell",
+			imageUrl: "https://pbs.twimg.com/media/FjU2lkcWYAgNG6d.jpg",
+			userId: 2,
+			username: "tpowell"
+		} ) )
+		dispatch( usersActions.updateUser( {
+			firstName: "Will",
+			lastName: "Hackemer",
+			imageUrl: "https://marketplace.canva.com/EAE2_HrPNRU/1/0/1600w/canva-mascot-character-twitch-profile-picture-jF0b61iv4pQ.jpg",
+			userId: 3,
+			username: "whack"
+		} ) )
+
+		const newPosts: Post[] = []
 		for( let i = 0; i < 20; i++ ) {
-			temp.push( {
+			newPosts.push( {
 				postId: i,
-				userId: 1,
+				userId: i % 3 + 1,
 				content: "Had a great time at the KSU Foundation annual ball. Wanted to give a huge shout out to Trent Powell and Will Hackemer for being beasts!",
 				postedOn: new Date(),
 				editedOn: new Date()
 			} )
 		}
 
-		return temp
-	}, [] )
+		setPosts( newPosts )
+		setTimeout( () => {
+			setLoading( false )
+		}, 2000 )
+	}, [ dispatch ] )
 
 	return (
 		<Container
@@ -46,16 +91,17 @@ export default function Feed() {
 								mb: 2
 							}}
 						/>
-						<Stack spacing={1}>
-							{posts.map( ( post, index ) => (
+						<Stack spacing={1} alignItems="center">
+							{loading && (
+								<CircularProgress />
+							)}
+							{!loading && posts.map( ( post, index ) => (
 								<PostCard post={post} key={index} />
 							) )}
 						</Stack>
 					</Grid>
 					<Grid item xs={3} >
-						<Box 
-							sx={{ border: "1px solid red", height: "100%" }}
-						/>
+						<RecommendedUsersCard />
 					</Grid>
 				</Grid>
 			</main>

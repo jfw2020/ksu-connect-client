@@ -1,6 +1,7 @@
+import { useAppSelector } from "@/hooks"
+import { selectUserById } from "@/slices/usersSlice"
 import { Post } from "@/types/postType"
-import { User } from "@/types/userType"
-import { Avatar, Box, Typography } from "@mui/material"
+import { Avatar, Box, Stack, Typography } from "@mui/material"
 import * as React from "react"
 
 interface PostCardProps {
@@ -9,7 +10,7 @@ interface PostCardProps {
 
 export default function PostCard( props: PostCardProps ) {
 	return (
-		<Box
+		<Stack
 			padding={2} 
 			border="1px solid"
 			borderColor="divider"
@@ -17,10 +18,11 @@ export default function PostCard( props: PostCardProps ) {
 			sx={{
 				backgroundColor: "white"
 			}}
+			gap={1}
 		>
 			<Header userId={props.post.userId} />
 			<Typography variant="body1">{props.post.content}</Typography>
-		</Box>
+		</Stack>
 	)
 }
 
@@ -29,13 +31,7 @@ interface HeaderProps {
 }
 
 function Header( props: HeaderProps ) {
-	const user: User = {
-		userId: props.userId,
-		username: "jacob_williams",
-		firstName: "Jacob",
-		lastName: "Williams",
-		imageUrl: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-	}
+	const user = useAppSelector( state => selectUserById( state, props.userId ) )
 
 	return (
 		<Box display="flex" flexDirection="row" gap={1}>
