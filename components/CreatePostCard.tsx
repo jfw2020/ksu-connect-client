@@ -8,7 +8,7 @@ export default function CreatePostCard() {
 	return (
 		<Box
 			padding={2} 
-			border="1px solid grey" 
+			border="1px solid" 
 			borderRadius={3}
 			borderColor="divider"
 			sx={{

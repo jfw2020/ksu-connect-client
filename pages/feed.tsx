@@ -1,14 +1,22 @@
 import CreatePostCard from "@/components/CreatePostCard"
 import PostCard from "@/components/PostCard"
+import ProfileCard from "@/components/ProfileCard"
+import { Post } from "@/types/postType"
 import { Box, Container, Divider, Grid, Stack } from "@mui/material"
 import Head from "next/head"
 import * as React from "react"
 
 export default function Feed() {
 	const posts = React.useMemo( () => {
-		const temp = []
+		const temp: Post[] = []
 		for( let i = 0; i < 20; i++ ) {
-			temp.push( "test" )
+			temp.push( {
+				postId: i,
+				userId: 1,
+				content: "Had a great time at the KSU Foundation annual ball. Wanted to give a huge shout out to Trent Powell and Will Hackemer for being beasts!",
+				postedOn: new Date(),
+				editedOn: new Date()
+			} )
 		}
 
 		return temp
@@ -29,9 +37,7 @@ export default function Feed() {
 			<main>
 				<Grid container columnSpacing={2}>
 					<Grid item xs={3}>
-						<Box 
-							sx={{ border: "1px solid red", height: "100%" }}
-						/>
+						<ProfileCard />
 					</Grid>
 					<Grid item xs={6}>
 						<CreatePostCard />
@@ -42,7 +48,7 @@ export default function Feed() {
 						/>
 						<Stack spacing={1}>
 							{posts.map( ( post, index ) => (
-								<PostCard key={index} />
+								<PostCard post={post} key={index} />
 							) )}
 						</Stack>
 					</Grid>
