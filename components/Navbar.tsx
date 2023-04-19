@@ -3,6 +3,9 @@ import Link from "next/link"
 import { styled, alpha } from "@mui/material/styles"
 import SearchIcon from "@mui/icons-material/Search"
 
+/**
+ * Style for the search bar shown in the Navbar
+ */
 const Search = styled( "div" )( ( { theme } ) => ( {
 	position: "relative",
 	borderRadius: theme.shape.borderRadius,
@@ -18,6 +21,9 @@ const Search = styled( "div" )( ( { theme } ) => ( {
 	},
 } ) )
 
+/**
+ * Style for the search icon inside the Search component
+ */
 const SearchIconWrapper = styled( "div" )( ( { theme } ) => ( {
 	padding: theme.spacing( 0, 2 ),
 	height: "100%",
@@ -28,6 +34,9 @@ const SearchIconWrapper = styled( "div" )( ( { theme } ) => ( {
 	justifyContent: "center",
 } ) )
 
+/**
+ * Style for the expanding input in the Navbar
+ */
 const StyledInputBase = styled( InputBase )( ( { theme } ) => ( {
 	color: "inherit",
 	"& .MuiInputBase-input": {
@@ -45,7 +54,16 @@ const StyledInputBase = styled( InputBase )( ( { theme } ) => ( {
 	},
 } ) )
 
+/**
+ * Navbar
+ * 
+ * This component presents the user with a Navbar to allow for easy
+ * navigation between pages.
+ */
 export default function Navbar() {
+	/**
+	 * Render
+	 */
 	return (
 		<AppBar position="static">
 			<Container>

@@ -4,11 +4,24 @@ import { Post } from "@/types/postType"
 import { Avatar, Box, Stack, Typography } from "@mui/material"
 import * as React from "react"
 
+/**
+ * Props for the PostCard component
+ */
 interface PostCardProps {
 	post: Post
 }
 
+/**
+ * PostCard
+ * 
+ * This component displays a post the user. Each post
+ * shows the user that created it and the actual content
+ * within the post.
+ */
 export default function PostCard( props: PostCardProps ) {
+	/**
+	 * Render
+	 */
 	return (
 		<Stack
 			padding={2} 
@@ -26,13 +39,29 @@ export default function PostCard( props: PostCardProps ) {
 	)
 }
 
+/**
+ * Props for the Header component
+ */
 interface HeaderProps {
 	userId: number
 }
 
+/**
+ * Header
+ * 
+ * This component displays a Post's creator's information
+ * at the top of the PostCard.
+ */
 function Header( props: HeaderProps ) {
+	/**
+	 * Selectors
+	 */
+	// Selects the user from the store with the given userId
 	const user = useAppSelector( state => selectUserById( state, props.userId ) )
 
+	/**
+	 * Render
+	 */
 	return (
 		<Box display="flex" flexDirection="row" gap={1}>
 			<Avatar 

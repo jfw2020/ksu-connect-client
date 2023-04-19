@@ -2,9 +2,22 @@ import { Avatar, Box, Button } from "@mui/material"
 import * as React from "react"
 import CreatePostModal from "./CreatePostModal"
 
+/**
+ * CreatePostCard
+ * 
+ * This component is a small card that displays the user's avatar and allows
+ * them to open the CreatePostModal.
+ */
 export default function CreatePostCard() {
+	/**
+	 * State
+	 */
+	// State for determining if the CreatePostModal is open or not
 	const [ modalOpen, setModalOpen ] = React.useState( false )
 
+	/**
+	 * Render
+	 */
 	return (
 		<Box
 			padding={2} 

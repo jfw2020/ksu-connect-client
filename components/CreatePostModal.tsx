@@ -1,14 +1,30 @@
 import { Avatar, Box, Button, Modal, Stack, TextField } from "@mui/material"
 import * as React from "react"
 
+/**
+ * Props for the CreatePostModal component
+ */
 interface CreatePostModalProps {
 	open: boolean
 	onClose?: () => void
 }
 
+/**
+ * CreatePostModal
+ * 
+ * This component is a Modal that pops up and allows the user
+ * to create a post.
+ */
 export default function CreatePostModal( props: CreatePostModalProps ) {
+	/**
+	 * State
+	 */
+	// State for holding the text the user is inputting
 	const [ text, setText ] = React.useState( "" )
 
+	/**
+	 * Render
+	 */
 	return (
 		<Modal
 			open={props.open}
