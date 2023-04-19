@@ -1,8 +1,17 @@
 import { Avatar, Box, Typography } from "@mui/material"
+import * as React from "react"
 
 export default function PostCard() {
 	return (
-		<Box padding={2} border="1px solid grey" borderRadius={3}>
+		<Box 
+			padding={2} 
+			border="1px solid"
+			borderColor="divider"
+			borderRadius={3}
+			sx={{
+				backgroundColor: "white"
+			}}
+		>
 			<Box display="flex" flexDirection="row" gap={1}>
 				<Avatar 
 					alt="Profile Image"

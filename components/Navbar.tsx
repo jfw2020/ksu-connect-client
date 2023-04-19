@@ -51,21 +51,17 @@ export default function Navbar() {
 			<Container>
 				<Toolbar disableGutters>
 					<Box
-						sx={{
-							display: "flex",
-							flexDirection: "row",
-							justifyContent: "space-between",
-							flex: 1,
-							alignItems: "center"
-						}}
+						display="flex"
+						flexDirection="row"
+						justifyContent="space-between"
+						flex={1}
+						alignItems="center"
 					>
 						<Box
-							sx={{
-								display: "flex",
-								flexDirection: "row",
-								gap: 2,
-								alignItems: "center"
-							}}
+							display="flex"
+							flexDirection="row"
+							gap={2}
+							alignItems="center"
 						>
 							<Link href="/">
 								<Typography variant="h6" noWrap>KSUConnect</Typography>
@@ -82,25 +78,18 @@ export default function Navbar() {
 						</Box>
 
 						<Box
-							sx={{
-								display: "flex",
-								flexDirection: "row",
-								gap: 2
-							}}
+							display="flex"
+							flexDirection="row"
+							gap={2}
 						>
 							<Link href="/">
-								<Typography
-									noWrap
-								>
-									Home
-								</Typography>
+								<Typography noWrap >Home</Typography>
+							</Link>
+							<Link href="/feed">
+								<Typography noWrap >Feed</Typography>
 							</Link>
 							<Link href="/network">
-								<Typography
-									noWrap
-								>
-									My Network
-								</Typography>
+								<Typography noWrap >My Network</Typography>
 							</Link>
 						</Box>
 					</Box>
