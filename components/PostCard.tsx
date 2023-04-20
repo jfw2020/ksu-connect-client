@@ -29,7 +29,8 @@ export default function PostCard( props: PostCardProps ) {
 			borderColor="divider"
 			borderRadius={3}
 			sx={{
-				backgroundColor: "white"
+				backgroundColor: "white",
+				width: "100%"
 			}}
 			gap={1}
 		>

@@ -1,4 +1,6 @@
+import { User } from "@/types/userType"
 import { Avatar, Box, Button, Modal, Stack, TextField } from "@mui/material"
+import axios from "axios"
 import * as React from "react"
 
 /**
@@ -6,7 +8,8 @@ import * as React from "react"
  */
 interface CreatePostModalProps {
 	open: boolean
-	onClose?: () => void
+	onClose: () => void
+	user: User
 }
 
 /**
@@ -19,9 +22,21 @@ export default function CreatePostModal( props: CreatePostModalProps ) {
 	/**
 	 * State
 	 */
-	// State for holding the text the user is inputting
-	const [ text, setText ] = React.useState( "" )
+	// State for holding the content the user is inputting
+	const [ content, setContent ] = React.useState( "" )
 
+	/**
+	 * Callbacks
+	 */
+	const handleCreatePost = React.useCallback( async () => {
+		await axios.post( "/api/posts", {
+			content
+		} )
+
+		setContent( "" )
+		props.onClose()
+	}, [content, props] )
+	
 	/**
 	 * Render
 	 */
@@ -44,18 +59,18 @@ export default function CreatePostModal( props: CreatePostModalProps ) {
 			>
 				<Stack gap={1}>
 					<Avatar 
-						alt="Profile Image"
-						src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+						alt={`${props.user.firstName} ${props.user.lastName}`}
+						src={props.user.imageUrl}
 					/>
 					<TextField 
 						variant="standard"
 						multiline
 						rows={5}
 						placeholder="What do you want to talk about?"
-						value={text}
-						onChange={e => setText( e.target.value )}
+						value={content}
+						onChange={e => setContent( e.target.value )}
 					/>
-					<Button variant="contained">Post</Button>
+					<Button variant="contained" onClick={handleCreatePost}>Post</Button>
 				</Stack>
 			</Box>
 		</Modal>

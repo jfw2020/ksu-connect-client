@@ -1,6 +1,11 @@
 import { Avatar, Box, Button } from "@mui/material"
 import * as React from "react"
 import CreatePostModal from "./CreatePostModal"
+import { User } from "@/types/userType"
+
+interface CreatePostCardProps {
+	user: User
+}
 
 /**
  * CreatePostCard
@@ -8,7 +13,7 @@ import CreatePostModal from "./CreatePostModal"
  * This component is a small card that displays the user's avatar and allows
  * them to open the CreatePostModal.
  */
-export default function CreatePostCard() {
+export default function CreatePostCard( props: CreatePostCardProps ) {
 	/**
 	 * State
 	 */
@@ -29,13 +34,17 @@ export default function CreatePostCard() {
 				mb: 2
 			}}
 		>
-			<CreatePostModal open={modalOpen} onClose={() => setModalOpen( false )} />
+			<CreatePostModal 
+				open={modalOpen} 
+				onClose={() => setModalOpen( false )} 
+				user={props.user}
+			/>
 			<Box display="flex" flexDirection="row" gap={1} alignItems="center">
 				<Avatar 
-					alt="Profile Image"
-					src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+					alt={`${props.user.firstName} ${props.user.lastName}`}
+					src={props.user.imageUrl}
 				/>
-				<Button variant="outlined" onClick={() => setModalOpen( true )}>Start post...</Button>
+				<Button variant="outlined" onClick={() => setModalOpen( true )}>Create a post...</Button>
 			</Box>
 		</Box>
 	)

@@ -1,6 +1,8 @@
 import { useAppDispatch } from "@/hooks"
 import { User } from "@/types/userType"
 import { Stack, Typography, Box, Avatar, CircularProgress } from "@mui/material"
+import axios from "axios"
+import Link from "next/link"
 import * as React from "react"
 
 export default function RecommendedUsersCard() {
@@ -21,10 +23,9 @@ export default function RecommendedUsersCard() {
 	// Initial render - initializes the users state
 	React.useEffect( () => {
 		const fetchUsers = async () => {
-			const response = await fetch( "/api/users" )
-			const json = await response.json()
+			const response = await axios( "/api/users" )
 
-			const newUsers: User[] = json.users
+			const newUsers: User[] = response.data.users
 
 			setUsers( newUsers )
 		}
@@ -53,10 +54,14 @@ export default function RecommendedUsersCard() {
 				/>
 			)}
 			{!loading && users.map( user => (
-				<UserRow 
+				<Link
 					key={user.userId}
-					user={user}
-				/>
+					href={`/user/${user.userId}`}
+				>
+					<UserRow 
+						user={user}
+					/>
+				</Link>
 			) )}
 		</Stack>
 	)

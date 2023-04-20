@@ -9,8 +9,31 @@ import Head from "next/head"
 import * as React from "react"
 import RecommendedUsersCard from "@/components/RecommendedUsersCard"
 import { User } from "@/types/userType"
+import axios from "axios"
+import { GetServerSideProps } from "next"
+import { getUser } from "./api/users/[userId]"
 
-export default function Feed() {
+interface FeedPageProps {
+	user: User
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+	const user = await getUser( "3" )
+
+	if( !user ) {
+		return {
+			props: {}
+		}
+	}
+
+	return { 
+		props: {
+			user
+		}
+	}
+}
+
+export default function FeedPage( props: FeedPageProps ) {
 	/**
 	 * Hooks
 	 */
@@ -30,21 +53,18 @@ export default function Feed() {
 	// Initial render - initializes the users in the Redux store and fetches the user's feed from the API
 	React.useEffect( () => {
 		const fetchPosts = async () => {
-			const response = await fetch( "/api/posts" )
-			const json = await response.json()
+			const response = await axios( "/api/posts" )
 
-			const newPosts: Post[] = json.posts
-			const newUsers: User[] = json.users
+			const newPosts: Post[] = response.data.posts
+			const newUsers: User[] = response.data.users
 
 			dispatch( usersActions.updateUsers( newUsers ) )
 			setPosts( newPosts )
 		}
 
-		setTimeout( () => {
-			fetchPosts().then( () => {
-				setLoading( false )
-			} )
-		}, 2000 )
+		fetchPosts().then( () => {
+			setLoading( false )
+		} )
 	}, [ dispatch ] )
 
 	return (
@@ -62,10 +82,12 @@ export default function Feed() {
 			<main>
 				<Grid container columnSpacing={2}>
 					<Grid item xs={3}>
-						<ProfileCard />
+						<ProfileCard user={props.user} />
 					</Grid>
 					<Grid item xs={6}>
-						<CreatePostCard />
+						<CreatePostCard 
+							user={props.user}
+						/>
 						<Divider 
 							sx={{
 								mb: 2

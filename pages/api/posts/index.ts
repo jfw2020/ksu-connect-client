@@ -4,9 +4,41 @@ import { User } from "@/types/userType"
 import { NextApiRequest, NextApiResponse } from "next"
 
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
+	const { 
+		method, 
+		body 
+	} = req
+
+	switch( method ) {
+		case "GET": {
+			const {
+				posts,
+				users
+			} = await getPosts()
+
+			res.status( 200 ).json( { 
+				posts,
+				users
+			} )
+			break
+		}
+		case "POST": {
+			await executeQuery( `
+                INSERT KSUConnect.Posts(UserId, Content)
+                VALUES(1, N'${body.content}');
+            ` )
+
+			res.status( 200 ).json( { message: "Success" } )
+		}
+	}
+	
+}
+
+async function getPosts() {
 	let results = await executeQuery( `
 		SELECT P.PostId, P.UserId, P.Content, P.CreatedOn, P.UpdatedOn
-		FROM KSUConnect.Posts P;
+		FROM KSUConnect.Posts P
+		ORDER BY P.UpdatedOn DESC;
 	` )
 
 	const posts: Post[] = results.map( result => ( {
@@ -31,8 +63,8 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 		imageUrl: result.ImageUrl
 	} ) )
 
-	res.status( 200 ).json( { 
+	return {
 		posts,
 		users
-	} )
+	}
 }
