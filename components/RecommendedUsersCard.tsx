@@ -1,10 +1,38 @@
-import { useAppSelector } from "@/hooks"
-import { selectUserById, selectUserIds } from "@/slices/usersSlice"
-import { Stack, Typography, Box, Avatar } from "@mui/material"
+import { useAppDispatch } from "@/hooks"
+import { User } from "@/types/userType"
+import { Stack, Typography, Box, Avatar, CircularProgress } from "@mui/material"
+import * as React from "react"
 
 export default function RecommendedUsersCard() {
-	const userIds = useAppSelector( selectUserIds )
+	/**
+	 * Hooks
+	 */
+	const dispatch = useAppDispatch()
 
+	/**
+	 * State
+	 */
+	const [ users, setUsers ] = React.useState( [] as User[] )
+	const [ loading, setLoading ] = React.useState( true )
+
+	/**
+	 * Effects
+	 */
+	// Initial render - initializes the users state
+	React.useEffect( () => {
+		const fetchUsers = async () => {
+			const response = await fetch( "/api/users" )
+			const json = await response.json()
+
+			const newUsers: User[] = json.users
+
+			setUsers( newUsers )
+		}
+
+		fetchUsers().then( () => {
+			setLoading( false )
+		} ) 
+	}, [ dispatch ] )
 	return (
 		<Stack
 			sx={{
@@ -17,10 +45,17 @@ export default function RecommendedUsersCard() {
 			gap={1}
 		>
 			<Typography variant="h6">Recommended Users</Typography>
-			{userIds.map( userId => (
+			{loading && (
+				<CircularProgress 
+					sx={{ 
+						alignSelf: "center" 
+					}} 
+				/>
+			)}
+			{!loading && users.map( user => (
 				<UserRow 
-					key={userId}
-					userId={userId}
+					key={user.userId}
+					user={user}
 				/>
 			) )}
 		</Stack>
@@ -28,12 +63,10 @@ export default function RecommendedUsersCard() {
 }
 
 interface UserRowProps {
-	userId: number
+	user: User
 }
 
 function UserRow( props: UserRowProps ) {
-	const user = useAppSelector( state => selectUserById( state, props.userId ) )
-
 	return (
 		<Box
 			sx={{
@@ -42,10 +75,10 @@ function UserRow( props: UserRowProps ) {
 			}}
 		>
 			<Avatar 
-				alt={`${user.firstName} ${user.lastName}`}
-				src={user.imageUrl}
+				alt={`${props.user.firstName} ${props.user.lastName}`}
+				src={props.user.imageUrl}
 			/>
-			<Typography variant="subtitle2">{user.firstName} {user.lastName}</Typography>
+			<Typography variant="subtitle2">{props.user.firstName} {props.user.lastName}</Typography>
 		</Box>
 	)
 }

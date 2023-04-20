@@ -5,7 +5,7 @@ import { NextApiRequest, NextApiResponse } from "next"
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const results = await executeQuery( `
 		SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl
-		FROM KSUConnect.Users;
+		FROM KSUConnect.Users U;
 	` )
 
 	const users: User[] = results.map( result => ( {

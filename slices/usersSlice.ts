@@ -5,17 +5,19 @@ import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit"
 /**
  * Reducers
  */
-const updateUser = ( state: UsersState, action: PayloadAction<User> ) => {
-	const userId = action.payload.userId
+const updateUsers = ( state: UsersState, action: PayloadAction<User[]> ) => {
+	const users = action.payload
 
-	if( !state.userIds.includes( userId ) ) {
-		state.userIds = [...state.userIds, userId]
-	}
+	users.forEach( user => {
+		if( !state.userIds.includes( user.userId ) ) {
+			state.userIds = [...state.userIds, user.userId]
+		}
 
-	state.users = {
-		...state.users,
-		[userId]: action.payload
-	}
+		state.users = {
+			...state.users,
+			[user.userId]: user
+		}
+	} )
 }
 
 /**
@@ -55,7 +57,7 @@ export const usersSlice = createSlice( {
 	name: "users",
 	initialState,
 	reducers: {
-		updateUser
+		updateUsers
 	}
 } )
 
