@@ -2,6 +2,9 @@ import { AppBar, Container, Toolbar, Box, Typography, InputBase } from "@mui/mat
 import Link from "next/link"
 import { styled, alpha } from "@mui/material/styles"
 import SearchIcon from "@mui/icons-material/Search"
+import useUser from "@/lib/useUser"
+import React from "react"
+import axios from "axios"
 
 /**
  * Style for the search bar shown in the Navbar
@@ -61,6 +64,19 @@ const StyledInputBase = styled( InputBase )( ( { theme } ) => ( {
  * navigation between pages.
  */
 export default function Navbar() {
+	const { user, mutateUser } = useUser()
+
+	console.log( user )
+
+	/**
+	 * Callbacks
+	 */
+	const handleLogout = React.useCallback( async () => {
+		const response = await axios( "/api/logout" )
+
+		mutateUser( response.data )
+	}, [mutateUser] )
+
 	/**
 	 * Render
 	 */
@@ -84,31 +100,36 @@ export default function Navbar() {
 							<Link href="/">
 								<Typography variant="h6" noWrap>KSUConnect</Typography>
 							</Link>
-							<Search>
-								<SearchIconWrapper>
-									<SearchIcon />
-								</SearchIconWrapper>
-								<StyledInputBase 
-									placeholder="Search..."
-									inputProps={{ "aria-label": "search" }}
-								/>
-							</Search>
+							{user?.isLoggedIn && (
+								<Search>
+									<SearchIconWrapper>
+										<SearchIcon />
+									</SearchIconWrapper>
+									<StyledInputBase 
+										placeholder="Search..."
+										inputProps={{ "aria-label": "search" }}
+									/>
+								</Search>
+							)}
 						</Box>
-
 						<Box
 							display="flex"
 							flexDirection="row"
 							gap={2}
 						>
-							<Link href="/">
-								<Typography noWrap >Home</Typography>
-							</Link>
-							<Link href="/feed">
-								<Typography noWrap >Feed</Typography>
-							</Link>
-							<Link href="/network">
-								<Typography noWrap >My Network</Typography>
-							</Link>
+							{user?.isLoggedIn && (
+								<>
+									<Link href="/feed">
+										<Typography noWrap >Feed</Typography>
+									</Link>
+									<Link href="/network">
+										<Typography noWrap >My Network</Typography>
+									</Link>
+									<Link href="/" onClick={handleLogout}>
+										<Typography noWrap >Logout</Typography>
+									</Link>
+								</>
+							)}
 						</Box>
 					</Box>
 				</Toolbar>

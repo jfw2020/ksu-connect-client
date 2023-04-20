@@ -10,30 +10,31 @@ import * as React from "react"
 import RecommendedUsersCard from "@/components/RecommendedUsersCard"
 import { User } from "@/types/userType"
 import axios from "axios"
-import { GetServerSideProps } from "next"
-import { getUser } from "./api/users/[userId]"
+import { withIronSessionSsr } from "iron-session/next"
+import { sessionOptions } from "../lib/session"
 
-interface FeedPageProps {
-	user: User
-}
-
-export const getServerSideProps: GetServerSideProps = async () => {
-	const user = await getUser( "3" )
+export const getServerSideProps = withIronSessionSsr( async function( {
+	req,
+} ) {
+	const user = req.session.user
 
 	if( !user ) {
 		return {
-			props: {}
+			redirect: {
+				destination: "/",
+				permanent: false
+			}
 		}
 	}
 
-	return { 
+	return {
 		props: {
 			user
 		}
 	}
-}
+}, sessionOptions )
 
-export default function FeedPage( props: FeedPageProps ) {
+export default function FeedPage( { user }: { user: User } ) {
 	/**
 	 * Hooks
 	 */
@@ -82,11 +83,11 @@ export default function FeedPage( props: FeedPageProps ) {
 			<main>
 				<Grid container columnSpacing={2}>
 					<Grid item xs={3}>
-						<ProfileCard user={props.user} />
+						<ProfileCard user={user} />
 					</Grid>
 					<Grid item xs={6}>
 						<CreatePostCard 
-							user={props.user}
+							user={user}
 						/>
 						<Divider 
 							sx={{

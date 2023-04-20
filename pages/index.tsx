@@ -1,18 +1,65 @@
+import { sessionOptions } from "@/lib/session"
+import useUser from "@/lib/useUser"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
 import { Box, Button, Container, Divider, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Stack, TextField, Typography } from "@mui/material"
+import axios from "axios"
+import { withIronSessionSsr } from "iron-session/next"
 import Head from "next/head"
 import * as React from "react"
 
+export const getServerSideProps = withIronSessionSsr( async function( {
+	req,
+} ) {
+	const user = req.session.user
+
+	if( user ) {
+		return {
+			redirect: {
+				destination: "/feed",
+				permanent: false
+			}
+		}
+	}
+
+	return {
+		props: {}
+	}
+}, sessionOptions )
+
 export default function Home() {
+	/**
+	 * Hooks
+	 */
+	const { mutateUser } = useUser( {
+		redirectTo: "/feed",
+		redirectIfFound: true
+	} )
+
 	/**
 	 * State
 	 */
 	// State that determines if the password should be shown
 	const [ showPassword, setShowPassword ] = React.useState( false )
 	// State that holds the email
-	const [ email, setEmail ] = React.useState( "" )
+	const [ username, setUsername ] = React.useState( "" )
 	// State that holds the password
 	const [ password, setPassword ] = React.useState( "" )
+
+	/**
+	 * Callbacks
+	 */
+	const handleLogin = React.useCallback( async () => {
+		try {
+			const response = await axios.post( "/api/login", {
+				username,
+				password
+			} )
+
+			mutateUser( response.data.user )
+		} catch ( e ) {
+			console.log( e )
+		}
+	}, [username, password, mutateUser] )
 
 	return (
 		<Container
@@ -51,12 +98,12 @@ export default function Home() {
 						>
 							<FormControl>
 								<TextField 
-									label="Email" 
+									label="Username" 
 									variant="outlined" 
-									type="email" 
+									type="text" 
 									fullWidth
-									value={email}
-									onChange={e => setEmail( e.target.value )}
+									value={username}
+									onChange={e => setUsername( e.target.value )}
 								/>
 							</FormControl>
 							<FormControl>
@@ -81,7 +128,7 @@ export default function Home() {
 									onChange={e => setPassword( e.target.value )}
 								/>
 							</FormControl>
-							<Button variant="contained">Sign In</Button>
+							<Button variant="contained" onClick={handleLogin}>Sign In</Button>
 							<Divider />
 							<Button variant="outlined">Sign Up</Button>
 						</Stack>
