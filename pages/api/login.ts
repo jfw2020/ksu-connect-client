@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next"
-import executeQuery from "@/lib/db"
+import executeQuery, { IQueryParam } from "@/lib/db"
 import { User } from "@/types/userType"
 import { withIronSessionApiRoute } from "iron-session/next"
 import { sessionOptions } from "@/lib/session"
@@ -8,14 +8,25 @@ async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
-	const passwordHash = req.body.password
+	const passwordHash = req.body.password // TODO hash this password
+
+	const params: IQueryParam[] = [
+		{
+			name: "username",
+			value: req.body.username as string,
+		},
+		{
+			name: "passwordHash",
+			value: passwordHash
+		}
+	]
 
 	const results = await executeQuery( `
 		SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl
 		FROM KSUConnect.Users U
-		WHERE U.Username = N'${req.body.username}'
-			AND U.PasswordHash = N'${passwordHash}';
-	` )
+		WHERE U.Username = @username
+			AND U.PasswordHash = @passwordHash;
+	`, params )
 	const result = results[0]
 
 	if( !result ) {

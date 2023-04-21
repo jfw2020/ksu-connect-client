@@ -1,9 +1,11 @@
-import executeQuery from "@/lib/db"
+import executeQuery, { IQueryParam } from "@/lib/db"
 import { Post } from "@/types/postType"
 import { User } from "@/types/userType"
 import { NextApiRequest, NextApiResponse } from "next"
+import { withIronSessionApiRoute } from "iron-session/next"
+import { sessionOptions } from "@/lib/session"
 
-export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
+async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const { 
 		method, 
 		body 
@@ -23,10 +25,23 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 			break
 		}
 		case "POST": {
+			const userId = req.session.user?.userId || 0
+
+			const params: IQueryParam[] = [
+				{
+					name: "userId",
+					value: userId
+				},
+				{
+					name: "content",
+					value: body.content as string
+				}
+			]
+
 			await executeQuery( `
                 INSERT KSUConnect.Posts(UserId, Content)
-                VALUES(1, N'${body.content}');
-            ` )
+                VALUES(@userId, @content);
+            `, params )
 
 			res.status( 200 ).json( { message: "Success" } )
 		}
@@ -68,3 +83,5 @@ async function getPosts() {
 		users
 	}
 }
+
+export default withIronSessionApiRoute( handler, sessionOptions )

@@ -11,10 +11,18 @@ const config: sql.config = {
 	},
 }
 
-export default async function executeQuery( query: string ) {
+export interface IQueryParam {
+	name: string
+	value: number | string
+}
+
+export default async function executeQuery( query: string, params?: IQueryParam[] ) {
 	const pool = await sql.connect( config )
 
-	const results = await pool.query( query )
+	const request = pool.request()
+	params?.forEach( param => request.input( param.name, param.value ) )
+
+	const results = await request.query( query )
 
 	return results.recordset
 }
