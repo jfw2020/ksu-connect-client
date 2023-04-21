@@ -50,14 +50,14 @@ async function handler( req: NextApiRequest, res: NextApiResponse ) {
 					postId: result.PostId,
 					userId: result.UserId,
 					content: result.Content,
-					createdOn: new Date( result.CreatedOn ),
-					updatedOn: new Date( result.UpdatedOn )
+					createdOn: result.CreatedOn,
+					updatedOn: result.UpdatedOn
 				}
 
 				res.status( 200 ).json( { post } )
 			}
 			else {
-				res.status( 500 ).json( { message: "Post not found" } )
+				res.status( 500 ).json( { message: "Unable to create post" } )
 			}
 		}
 	}
@@ -75,8 +75,8 @@ async function getPosts() {
 		postId: result.PostId,
 		userId: result.UserId,
 		content: result.Content,
-		createdOn: new Date( result.CreatedOn ),
-		updatedOn: new Date( result.UpdatedOn )
+		createdOn: result.CreatedOn,
+		updatedOn: result.UpdatedOn
 	} ) )
 
 	results = await executeQuery( `

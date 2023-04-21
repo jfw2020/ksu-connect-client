@@ -34,7 +34,7 @@ export default function PostCard( props: PostCardProps ) {
 			}}
 			gap={1}
 		>
-			<Header userId={props.post.userId} />
+			<Header post={props.post} userId={props.post.userId} />
 			<Typography variant="body1">{props.post.content}</Typography>
 		</Stack>
 	)
@@ -44,6 +44,7 @@ export default function PostCard( props: PostCardProps ) {
  * Props for the Header component
  */
 interface HeaderProps {
+	post: Post
 	userId: number
 }
 
@@ -64,15 +65,18 @@ function Header( props: HeaderProps ) {
 	 * Render
 	 */
 	return (
-		<Box display="flex" flexDirection="row" gap={1}>
-			<Avatar 
-				alt={`${user.firstName} ${user.lastName}`}
-				src={user.imageUrl}
-			/>
-			<Box>
-				<Typography variant="subtitle2">{user.firstName} {user.lastName}</Typography>
-				<Typography variant="caption">Computer Science</Typography>
+		<Box display="flex" justifyContent="space-between">
+			<Box display="flex" flexDirection="row" gap={1}>
+				<Avatar 
+					alt={`${user.firstName} ${user.lastName}`}
+					src={user.imageUrl}
+				/>
+				<Box>
+					<Typography variant="subtitle2">{user.firstName} {user.lastName}</Typography>
+					<Typography variant="caption">Computer Science</Typography>
+				</Box>
 			</Box>
+			<Typography variant="caption">{props.post.updatedOn.toLocaleDateString()}</Typography>
 		</Box>
 	)
 }

@@ -22,8 +22,8 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 			postId: result.PostId,
 			userId: result.UserId,
 			content: result.Content,
-			createdOn: new Date( result.CreatedOn ),
-			updatedOn: new Date( result.UpdatedOn )
+			createdOn: result.CreatedOn,
+			updatedOn: result.UpdatedOn
 		}
 
 		res.status( 200 ).json( { post } )

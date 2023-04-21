@@ -5,6 +5,7 @@ import SearchIcon from "@mui/icons-material/Search"
 import useUser from "@/lib/useUser"
 import React from "react"
 import axios from "axios"
+import { User } from "@/types/userType"
 
 /**
  * Style for the search bar shown in the Navbar
@@ -66,6 +67,9 @@ const StyledInputBase = styled( InputBase )( ( { theme } ) => ( {
 export default function Navbar( ) {
 	const { user, mutateUser } = useUser()
 
+	const [ queryString, setQueryString ] = React.useState( "" )
+	const [ users, setUsers ] = React.useState( [] as User[] )
+
 	/**
 	 * Callbacks
 	 */
@@ -74,6 +78,17 @@ export default function Navbar( ) {
 
 		mutateUser( response.data )
 	}, [mutateUser] )
+
+	React.useEffect( () => {
+		const fetchUsers = async () => {
+			const response = await axios( "/api/users" )
+
+			const newUsers: User[] = response.data.users
+			setUsers( newUsers )
+		}
+
+		fetchUsers()
+	}, [] )
 
 	/**
 	 * Render

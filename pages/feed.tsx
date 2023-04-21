@@ -55,8 +55,13 @@ export default function FeedPage( { user }: { user: User } ) {
 		const response = await axios.post( "/api/posts", {
 			content
 		} )
+		const post = response.data.post
 
-		const newPost: Post = response.data.post
+		const newPost: Post = {
+			...post,
+			createdOn: new Date( post.createdOn ),
+			updatedOn: new Date( post.updatedOn )
+		}
 		if( newPost ) {
 			setPosts( prevState => [newPost, ...prevState] )
 		}
@@ -70,7 +75,11 @@ export default function FeedPage( { user }: { user: User } ) {
 		const fetchPosts = async () => {
 			const response = await axios( "/api/posts" )
 
-			const newPosts: Post[] = response.data.posts
+			const newPosts: Post[] = response.data.posts.map( ( post: Post ) => ( {
+				...post,
+				createdOn: new Date( post.createdOn ),
+				updatedOn: new Date( post.updatedOn )
+			} ) )
 			const newUsers: User[] = response.data.users
 
 			dispatch( usersActions.updateUsers( newUsers ) )
