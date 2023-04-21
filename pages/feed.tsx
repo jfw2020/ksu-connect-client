@@ -49,6 +49,20 @@ export default function FeedPage( { user }: { user: User } ) {
 	const [ loading, setLoading] = React.useState( true )
 
 	/**
+	 * Callbacks
+	 */
+	const handleCreatePost = React.useCallback( async ( content: string ) => {
+		const response = await axios.post( "/api/posts", {
+			content
+		} )
+
+		const newPost: Post = response.data.post
+		if( newPost ) {
+			setPosts( prevState => [newPost, ...prevState] )
+		}
+	}, [] )
+
+	/**
 	 * Effects
 	 */
 	// Initial render - initializes the users in the Redux store and fetches the user's feed from the API
@@ -88,6 +102,7 @@ export default function FeedPage( { user }: { user: User } ) {
 					<Grid item xs={6}>
 						<CreatePostCard 
 							user={user}
+							onCreatePost={handleCreatePost}
 						/>
 						<Divider 
 							sx={{

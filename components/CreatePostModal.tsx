@@ -1,6 +1,5 @@
 import { User } from "@/types/userType"
 import { Avatar, Box, Button, Modal, Stack, TextField } from "@mui/material"
-import axios from "axios"
 import * as React from "react"
 
 /**
@@ -10,6 +9,7 @@ interface CreatePostModalProps {
 	open: boolean
 	onClose: () => void
 	user: User
+	onCreatePost: ( content: string ) => Promise<void>
 }
 
 /**
@@ -24,19 +24,17 @@ export default function CreatePostModal( props: CreatePostModalProps ) {
 	 */
 	// State for holding the content the user is inputting
 	const [ content, setContent ] = React.useState( "" )
-
+	
 	/**
 	 * Callbacks
 	 */
 	const handleCreatePost = React.useCallback( async () => {
-		await axios.post( "/api/posts", {
-			content
-		} )
+		await props.onCreatePost( content )
 
 		setContent( "" )
 		props.onClose()
 	}, [content, props] )
-	
+
 	/**
 	 * Render
 	 */

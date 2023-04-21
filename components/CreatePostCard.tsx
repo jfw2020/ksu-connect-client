@@ -5,6 +5,7 @@ import { User } from "@/types/userType"
 
 interface CreatePostCardProps {
 	user: User
+	onCreatePost: ( content: string ) => Promise<void>
 }
 
 /**
@@ -38,6 +39,7 @@ export default function CreatePostCard( props: CreatePostCardProps ) {
 				open={modalOpen} 
 				onClose={() => setModalOpen( false )} 
 				user={props.user}
+				onCreatePost={props.onCreatePost}
 			/>
 			<Box display="flex" flexDirection="row" gap={1} alignItems="center">
 				<Avatar 

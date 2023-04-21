@@ -38,12 +38,27 @@ async function handler( req: NextApiRequest, res: NextApiResponse ) {
 				}
 			]
 
-			await executeQuery( `
+			const results = await executeQuery( `
                 INSERT KSUConnect.Posts(UserId, Content)
+				OUTPUT INSERTED.*
                 VALUES(@userId, @content);
             `, params )
+			const result = results[0]
 
-			res.status( 200 ).json( { message: "Success" } )
+			if( result ) {
+				const post: Post = {
+					postId: result.PostId,
+					userId: result.UserId,
+					content: result.Content,
+					createdOn: new Date( result.CreatedOn ),
+					updatedOn: new Date( result.UpdatedOn )
+				}
+
+				res.status( 200 ).json( { post } )
+			}
+			else {
+				res.status( 500 ).json( { message: "Post not found" } )
+			}
 		}
 	}
 	
