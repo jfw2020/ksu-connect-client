@@ -8,6 +8,8 @@ import "@fontsource/roboto/700.css"
 import { ThemeProvider, createTheme } from "@mui/material"
 import { Provider } from "react-redux"
 import { store } from "@/store"
+import { SWRConfig } from "swr"
+import fetchJson from "@/lib/fetchJSON"
 
 export default function App( { Component, pageProps }: AppProps ) {
 	const theme = createTheme( {
@@ -22,8 +24,14 @@ export default function App( { Component, pageProps }: AppProps ) {
 	return (
 		<ThemeProvider theme={theme}>
 			<Provider store={store}>
-				<Navbar />
-				<Component {...pageProps} />
+				<SWRConfig
+					value={{
+						fetcher: fetchJson
+					}}
+				>
+					<Navbar />
+					<Component {...pageProps} />
+				</SWRConfig>
 			</Provider>
 		</ThemeProvider>
 	)

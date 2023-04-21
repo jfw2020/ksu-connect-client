@@ -5,6 +5,7 @@ import { Box, Button, Container, Divider, FormControl, IconButton, InputAdornmen
 import axios from "axios"
 import { withIronSessionSsr } from "iron-session/next"
 import Head from "next/head"
+import { useRouter } from "next/router"
 import * as React from "react"
 
 export const getServerSideProps = withIronSessionSsr( async function( {
@@ -30,10 +31,8 @@ export default function Home() {
 	/**
 	 * Hooks
 	 */
-	const { mutateUser } = useUser( {
-		redirectTo: "/feed",
-		redirectIfFound: true
-	} )
+	const { mutateUser } = useUser()
+	const router = useRouter()
 
 	/**
 	 * State
@@ -56,10 +55,12 @@ export default function Home() {
 			} )
 
 			mutateUser( response.data.user )
+
+			router.push( "/feed" )
 		} catch ( e ) {
 			console.log( e )
 		}
-	}, [username, password, mutateUser] )
+	}, [username, password, mutateUser, router] )
 
 	return (
 		<Container

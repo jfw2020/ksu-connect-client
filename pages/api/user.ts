@@ -1,6 +1,6 @@
 import { sessionOptions } from "@/lib/session"
 import { User } from "@/types/userType"
-import { withIronSessionApiRoute } from "iron-session/next/dist"
+import { withIronSessionApiRoute } from "iron-session/next"
 import { NextApiRequest, NextApiResponse } from "next"
 
 async function handler( req: NextApiRequest, res: NextApiResponse<User> ) {

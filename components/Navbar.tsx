@@ -63,10 +63,8 @@ const StyledInputBase = styled( InputBase )( ( { theme } ) => ( {
  * This component presents the user with a Navbar to allow for easy
  * navigation between pages.
  */
-export default function Navbar() {
+export default function Navbar( ) {
 	const { user, mutateUser } = useUser()
-
-	console.log( user )
 
 	/**
 	 * Callbacks
