@@ -3,7 +3,7 @@ import sql from "mssql"
 const config: sql.config = {
 	user: process.env.DB_USER,
 	password: process.env.DB_PASSWORD,
-	server: process.env.DB_HOST || "localhost",
+	server: process.env.DB_HOST || `localhost`,
 	database: process.env.DB_DATABASE,
 	port: parseInt( process.env.DB_PORT || "1433" ),
 	options: {
@@ -17,7 +17,7 @@ export interface IQueryParam {
 }
 
 export default async function executeQuery( query: string, params?: IQueryParam[] ) {
-	const pool = await sql.connect( config )
+	const pool = await sql.connect( process.env.DB_CONNECTION_STRING || config )
 
 	const request = pool.request()
 	params?.forEach( param => request.input( param.name, param.value ) )
