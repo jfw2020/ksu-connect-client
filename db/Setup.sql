@@ -1,0 +1,38 @@
+USE [CIS560]; -- Your database here.
+
+/*********************
+ * Drop Tables
+ *********************/
+
+IF SCHEMA_ID(N'KSUConnect') IS NULL
+   EXEC(N'CREATE SCHEMA [KSUConnect];');
+GO
+
+DROP TABLE IF EXISTS KSUConnect.Posts;
+DROP TABLE IF EXISTS KSUConnect.Users;
+
+/******************
+ * Create Tables
+ ******************/
+
+CREATE TABLE KSUConnect.Users
+(
+   UserId INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
+   Username NVARCHAR(32) NOT NULL UNIQUE,
+   PasswordHash NVARCHAR(64) NOT NULL,
+   FirstName NVARCHAR(32) NOT NULL,
+   LastName NVARCHAR(32) NOT NULL,
+   ImageUrl NVARCHAR(128) NULL,
+   CreatedOn DATETIMEOFFSET NOT NULL DEFAULT(SYSDATETIMEOFFSET()),
+   UpdatedOn DATETIMEOFFSET NOT NULL DEFAULT(SYSDATETIMEOFFSET())
+);
+
+CREATE TABLE KSUConnect.Posts
+(
+   PostId INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
+   UserId INT NOT NULL FOREIGN KEY
+      REFERENCES KSUConnect.Users(UserId),
+   Content NVARCHAR(1024) NOT NULL,
+   CreatedOn DATETIMEOFFSET NOT NULL DEFAULT(SYSDATETIMEOFFSET()),
+   UpdatedOn DATETIMEOFFSET NOT NULL DEFAULT(SYSDATETIMEOFFSET())
+);
