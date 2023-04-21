@@ -1,4 +1,4 @@
-import { AppBar, Container, Toolbar, Box, Typography, InputBase } from "@mui/material"
+import { AppBar, Container, Toolbar, Box, Typography, InputBase, Popper, Fade, Paper, CircularProgress, ClickAwayListener } from "@mui/material"
 import Link from "next/link"
 import { styled, alpha } from "@mui/material/styles"
 import SearchIcon from "@mui/icons-material/Search"
@@ -6,6 +6,7 @@ import useUser from "@/lib/useUser"
 import React from "react"
 import axios from "axios"
 import { User } from "@/types/userType"
+import UserRow from "./UserRow"
 
 /**
  * Style for the search bar shown in the Navbar
@@ -67,9 +68,6 @@ const StyledInputBase = styled( InputBase )( ( { theme } ) => ( {
 export default function Navbar( ) {
 	const { user, mutateUser } = useUser()
 
-	const [ queryString, setQueryString ] = React.useState( "" )
-	const [ users, setUsers ] = React.useState( [] as User[] )
-
 	/**
 	 * Callbacks
 	 */
@@ -78,17 +76,6 @@ export default function Navbar( ) {
 
 		mutateUser( response.data )
 	}, [mutateUser] )
-
-	React.useEffect( () => {
-		const fetchUsers = async () => {
-			const response = await axios( "/api/users" )
-
-			const newUsers: User[] = response.data.users
-			setUsers( newUsers )
-		}
-
-		fetchUsers()
-	}, [] )
 
 	/**
 	 * Render
@@ -114,15 +101,7 @@ export default function Navbar( ) {
 								<Typography variant="h6" noWrap>KSUConnect</Typography>
 							</Link>
 							{user?.isLoggedIn && (
-								<Search>
-									<SearchIconWrapper>
-										<SearchIcon />
-									</SearchIconWrapper>
-									<StyledInputBase 
-										placeholder="Search..."
-										inputProps={{ "aria-label": "search" }}
-									/>
-								</Search>
+								<SearchBox />
 							)}
 						</Box>
 						<Box
@@ -148,5 +127,94 @@ export default function Navbar( ) {
 				</Toolbar>
 			</Container>
 		</AppBar>
+	)
+}
+
+function SearchBox() {
+	const [ anchor, setAnchor ] = React.useState<null | HTMLElement>( null )
+	const [ loading, setLoading ] = React.useState( false )
+	const [ users, setUsers ] = React.useState<User[]>( [] )
+
+	const handleClick = React.useCallback( ( event: React.MouseEvent<HTMLElement> ) => {
+		setAnchor( event.currentTarget )
+		setLoading( true )
+	}, [] )
+
+	React.useEffect( () => {
+		const fetchUsers = async () => {
+			const response = await axios( "/api/users" )
+
+			const newUsers: User[] = response.data.users
+			setUsers( newUsers )
+		}
+
+		if( anchor && loading ) {
+			setTimeout( () => {
+				fetchUsers().then( () => setLoading( false ) )
+			}, 1000	)
+		}
+		else if ( !anchor ) {
+			setUsers( [] )
+		}
+	}, [anchor, loading] )
+
+	return (
+		<ClickAwayListener onClickAway={() => setAnchor( null )}>
+			<Box>
+				<Search onClick={handleClick}>
+					<SearchIconWrapper>
+						<SearchIcon />
+					</SearchIconWrapper>
+					<StyledInputBase 
+						placeholder="Search..."
+						inputProps={{ "aria-label": "search" }}
+					/>
+				</Search>
+				<Popper
+					open={!!anchor}
+					anchorEl={anchor}
+					placement="bottom-start"
+					transition
+				>
+					{( { TransitionProps } ) => (
+						<Fade {...TransitionProps} timeout={300}>
+							<Paper 
+								sx={{
+									width: "35ch",
+									display: "flex",
+									flexDirection: "column",
+									gap: 1,
+									padding: 1,
+									justifyContent: "center",
+									minHeight: 100,
+									maxHeight: 500,
+									overflowY: "auto"
+								}}
+								variant="outlined"
+							>
+								{loading && (
+									<CircularProgress 
+										sx={{
+											alignSelf: "center",
+										}}
+									/>
+								)}
+								{!loading && users.map( user => (
+									<Link
+										key={user.userId}
+										href={`/user/${user.userId}`}
+										onClick={() => setAnchor( null )}
+									>
+										<UserRow 
+											user={user}
+										/>
+									</Link>
+								) )}
+							</Paper>
+						</Fade>
+					)}
+				</Popper>
+			</Box>
+		</ClickAwayListener>
 	)
 }

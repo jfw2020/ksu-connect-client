@@ -1,9 +1,10 @@
 import { useAppDispatch } from "@/hooks"
 import { User } from "@/types/userType"
-import { Stack, Typography, Box, Avatar, CircularProgress } from "@mui/material"
+import { Stack, Typography, CircularProgress } from "@mui/material"
 import axios from "axios"
 import Link from "next/link"
 import * as React from "react"
+import UserRow from "./UserRow"
 
 export default function RecommendedUsersCard() {
 	/**
@@ -67,23 +68,4 @@ export default function RecommendedUsersCard() {
 	)
 }
 
-interface UserRowProps {
-	user: User
-}
 
-function UserRow( props: UserRowProps ) {
-	return (
-		<Box
-			sx={{
-				display: "flex",
-				gap: 1
-			}}
-		>
-			<Avatar 
-				alt={`${props.user.firstName} ${props.user.lastName}`}
-				src={props.user.imageUrl}
-			/>
-			<Typography variant="subtitle2">{props.user.firstName} {props.user.lastName}</Typography>
-		</Box>
-	)
-}
