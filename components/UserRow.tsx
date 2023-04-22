@@ -6,6 +6,15 @@ interface UserRowProps {
 }
 
 export default function UserRow( props: UserRowProps ) {
+	let majorsText = ""
+	props.user.majors.forEach( ( major, index ) => {
+		majorsText += major
+
+		if( index < props.user.majors.length - 1 ) {
+			majorsText += " | "
+		}
+	} )
+
 	return (
 		<Box
 			sx={{
@@ -19,7 +28,7 @@ export default function UserRow( props: UserRowProps ) {
 			/>
 			<Stack>
 				<Typography variant="subtitle2">{props.user.firstName} {props.user.lastName}</Typography>
-				<Typography variant="caption">Computer Science</Typography>
+				<Typography variant="caption">{majorsText}</Typography>
 			</Stack>
 		</Box>
 	)

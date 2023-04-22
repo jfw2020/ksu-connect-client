@@ -1,4 +1,4 @@
-USE [twpowell]; -- Your database here.
+USE [CIS560]; -- Your database here.
 
 /*********************
  * Drop Tables

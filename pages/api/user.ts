@@ -17,7 +17,9 @@ async function handler( req: NextApiRequest, res: NextApiResponse<User> ) {
 			imageUrl: "",
 			isLoggedIn: false,
 			userId: -1,
-			username: ""
+			username: "",
+			majors: [],
+			categories: []
 		} )
 	}
 }

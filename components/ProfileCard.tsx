@@ -6,6 +6,15 @@ interface ProfileCardProps {
 }
 
 export default function ProfileCard( props: ProfileCardProps ) {
+	let majorsText = ""
+	props.user.majors.forEach( ( major, index ) => {
+		majorsText += major
+
+		if( index < props.user.majors.length - 1 ) {
+			majorsText += " | "
+		}
+	} )
+
 	return (
 		<Stack
 			sx={{
@@ -29,7 +38,7 @@ export default function ProfileCard( props: ProfileCardProps ) {
 					}}
 				/>
 				<Typography variant="h6">{props.user.firstName} {props.user.lastName}</Typography>
-				<Typography variant="caption">Computer Science</Typography>
+				<Typography variant="caption">{majorsText}</Typography>
 			</Stack>
 			<Stack>
 				<Typography variant="subtitle2">Network</Typography>

@@ -3,6 +3,7 @@ import executeQuery, { IQueryParam } from "@/lib/db"
 import { User } from "@/types/userType"
 import { withIronSessionApiRoute } from "iron-session/next"
 import { sessionOptions } from "@/lib/session"
+import { getCategories, getMajors } from "./users/[userId]"
 
 async function handler(
 	req: NextApiRequest,
@@ -33,13 +34,20 @@ async function handler(
 		res.status( 500 ).json( { message: "Invalid username or password" } )
 	}
 	else {
+		const userId = result.UserId
+
+		const majors = await getMajors( userId )
+		const categories = await getCategories( userId )
+
 		const user: User = {
-			userId: result.UserId,
+			userId,
 			username: result.Username,
 			firstName: result.FirstName,
 			lastName: result.LastName,
 			imageUrl: result.ImageUrl,
-			isLoggedIn: true
+			isLoggedIn: true,
+			majors,
+			categories
 		}
 
 		req.session.user = user

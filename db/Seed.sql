@@ -39,7 +39,7 @@ VALUES
     (N'Engineering')
 -- Static DO NOT ADD
 
-INSERT KSUConnect.Users(Username, PasswordHash, FirstName, LastName, ImageUrl, SchoolStatusID)
+INSERT KSUConnect.Users(Username, PasswordHash, FirstName, LastName, ImageUrl, SchoolStatusId)
 VALUES
     (N'jfw2020', N'password', N'Jacob', N'Williams', N'https://pbs.twimg.com/media/FjU2lkcWYAgNG6d.jpg', 4),
     (N'tpowell', N'password', N'Trent', N'Powell', N'https://pub-static.fotor.com/assets/projects/pages/d5bdd0513a0740a8a38752dbc32586d0/fotor-03d1a91a0cec4542927f53c87e0599f6.jpg', 3),

@@ -5,4 +5,6 @@ export type User = {
 	lastName: string
 	imageUrl: string
 	isLoggedIn?: boolean
+	majors: string[]
+	categories: string[]
 }
