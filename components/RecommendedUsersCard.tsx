@@ -2,7 +2,6 @@ import { useAppDispatch } from "@/hooks"
 import { User } from "@/types/userType"
 import { Stack, Typography, CircularProgress } from "@mui/material"
 import axios from "axios"
-import Link from "next/link"
 import * as React from "react"
 import UserRow from "./UserRow"
 
@@ -55,14 +54,10 @@ export default function RecommendedUsersCard() {
 				/>
 			)}
 			{!loading && users.map( user => (
-				<Link
+				<UserRow 
+					user={user}
 					key={user.userId}
-					href={`/user/${user.userId}`}
-				>
-					<UserRow 
-						user={user}
-					/>
-				</Link>
+				/>
 			) )}
 		</Stack>
 	)

@@ -64,12 +64,27 @@ async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	
 }
 
-async function getPosts() {
-	let results = await executeQuery( `
+export async function getPosts( userId?: string ) {
+	const params: IQueryParam[] = [{
+		name: "userId",
+		value: userId || ""
+	}]
+
+	let query = `
 		SELECT P.PostId, P.UserId, P.Content, P.CreatedOn, P.UpdatedOn
 		FROM KSUConnect.Posts P
 		ORDER BY P.UpdatedOn DESC;
-	` )
+	`
+	if( userId ) {
+		query = `
+			SELECT P.PostId, P.UserId, P.Content, P.CreatedOn, P.UpdatedOn
+			FROM KSUConnect.Posts P
+			WHERE P.UserId = @userId
+			ORDER BY P.UpdatedOn DESC;
+		`
+	}
+
+	let results = await executeQuery( query, params )
 
 	const posts: Post[] = results.map( result => ( {
 		postId: result.PostId,

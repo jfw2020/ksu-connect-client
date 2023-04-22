@@ -1,4 +1,8 @@
-import { Box, Container, Tab, Tabs, Typography } from "@mui/material"
+import UserRow from "@/components/UserRow"
+import useUser from "@/lib/useUser"
+import { User } from "@/types/userType"
+import { Box, CircularProgress, Container, Stack, Tab, Tabs, Typography } from "@mui/material"
+import axios from "axios"
 import Head from "next/head"
 import * as React from "react"
 
@@ -35,10 +39,10 @@ export default function Network() {
 						</Tabs>
 					</Box>
 					<TabPanel value={tabIndex} index={0}>
-						<Typography>Following</Typography>
+						<UsersPanel following />
 					</TabPanel>
 					<TabPanel value={tabIndex} index={1}>
-						<Typography>Followers</Typography>
+						<UsersPanel />
 					</TabPanel>
 				</Box>
 			</main>
@@ -59,10 +63,53 @@ function TabPanel( props: TabPanelProps ) {
 			hidden={props.value !== props.index}
 		>
 			{props.value === props.index && (
-				<Box p={2}>
+				<Box p={1} pb={0}>
 					{props.children}
 				</Box>
 			)}
 		</div>
+	)
+}
+
+interface UsersPanelProps {
+	following?: boolean
+}
+
+function UsersPanel( props: UsersPanelProps ) {
+	const { user } = useUser()
+
+	const [ users, setUsers ] = React.useState<User[]>( [] )
+	const [ loading, setLoading ] = React.useState( true )
+
+	React.useEffect( () => {
+		const fetchUsers = async () => {
+			const response = await axios( `/api/${props.following ? "following" : "followers"}/${user?.userId || 0}` )
+
+			const newUsers: User[] = response.data.users
+
+			setUsers( newUsers )
+		}
+
+		fetchUsers().then( () => {
+			setLoading( false )
+		} )
+	}, [user?.userId, props.following] )
+
+	return (
+		<Stack gap={1}>
+			{loading && (
+				<CircularProgress 
+					sx={{
+						alignSelf: "center",
+					}}
+				/>
+			)}
+			{!loading && users.map( user => (
+				<UserRow 
+					user={user}
+					key={user.userId}
+				/>
+			) )}
+		</Stack>
 	)
 }

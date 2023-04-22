@@ -134,10 +134,16 @@ function SearchBox() {
 	const [ anchor, setAnchor ] = React.useState<null | HTMLElement>( null )
 	const [ loading, setLoading ] = React.useState( false )
 	const [ users, setUsers ] = React.useState<User[]>( [] )
+	const [ query, setQuery ] = React.useState( "" )
 
 	const handleClick = React.useCallback( ( event: React.MouseEvent<HTMLElement> ) => {
 		setAnchor( event.currentTarget )
 		setLoading( true )
+	}, [] )
+
+	const handleUserClick = React.useCallback( () => {
+		setAnchor( null )
+		setQuery( "" )
 	}, [] )
 
 	React.useEffect( () => {
@@ -168,6 +174,8 @@ function SearchBox() {
 					<StyledInputBase 
 						placeholder="Search..."
 						inputProps={{ "aria-label": "search" }}
+						value={query}
+						onChange={e => setQuery( e.target.value )}
 					/>
 				</Search>
 				<Popper
@@ -200,15 +208,11 @@ function SearchBox() {
 									/>
 								)}
 								{!loading && users.map( user => (
-									<Link
+									<UserRow 
+										user={user}
+										onClick={handleUserClick}
 										key={user.userId}
-										href={`/user/${user.userId}`}
-										onClick={() => setAnchor( null )}
-									>
-										<UserRow 
-											user={user}
-										/>
-									</Link>
+									/>
 								) )}
 							</Paper>
 						</Fade>

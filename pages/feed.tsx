@@ -12,11 +12,22 @@ import { User } from "@/types/userType"
 import axios from "axios"
 import { withIronSessionSsr } from "iron-session/next"
 import { sessionOptions } from "../lib/session"
+import { getNumFollowers } from "./api/followers/[userId]"
+import { getNumPosts } from "./api/posts/user/[userId]"
+
+interface FeedPageProps {
+	user: User
+	numFollowers: number
+	numPosts: number
+}
 
 export const getServerSideProps = withIronSessionSsr( async function( {
 	req,
 } ) {
 	const user = req.session.user
+
+	const numFollowers = await getNumFollowers( user?.userId.toString() || "0" )
+	const numPosts = await getNumPosts( user?.userId.toString() || "0" )
 
 	if( !user ) {
 		return {
@@ -29,12 +40,14 @@ export const getServerSideProps = withIronSessionSsr( async function( {
 
 	return {
 		props: {
-			user
+			user,
+			numFollowers,
+			numPosts
 		}
 	}
 }, sessionOptions )
 
-export default function FeedPage( { user }: { user: User } ) {
+export default function FeedPage( props: FeedPageProps ) {
 	/**
 	 * Hooks
 	 */
@@ -47,6 +60,8 @@ export default function FeedPage( { user }: { user: User } ) {
 	const [posts, setPosts] = React.useState( [] as Post[] )
 	// State to hold if the feed is loading
 	const [ loading, setLoading] = React.useState( true )
+	// State to hold how posts the user has created
+	const [ numPosts, setNumPosts ] = React.useState( props.numPosts )
 
 	/**
 	 * Callbacks
@@ -64,6 +79,7 @@ export default function FeedPage( { user }: { user: User } ) {
 		}
 		if( newPost ) {
 			setPosts( prevState => [newPost, ...prevState] )
+			setNumPosts( prevState => prevState + 1 )
 		}
 	}, [] )
 
@@ -106,11 +122,15 @@ export default function FeedPage( { user }: { user: User } ) {
 			<main>
 				<Grid container columnSpacing={2}>
 					<Grid item xs={3}>
-						<ProfileCard user={user} />
+						<ProfileCard 
+							user={props.user} 
+							numFollowers={props.numFollowers}
+							numPosts={numPosts}
+						/>
 					</Grid>
 					<Grid item xs={6}>
 						<CreatePostCard 
-							user={user}
+							user={props.user}
 							onCreatePost={handleCreatePost}
 						/>
 						<Divider 

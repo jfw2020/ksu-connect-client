@@ -1,20 +1,14 @@
+import { getMajorsText } from "@/lib/helpers"
 import { User } from "@/types/userType"
 import { Avatar, Divider, Stack, Typography } from "@mui/material"
 
 interface ProfileCardProps {
 	user: User
+	numFollowers: number
+	numPosts: number
 }
 
 export default function ProfileCard( props: ProfileCardProps ) {
-	let majorsText = ""
-	props.user.majors.forEach( ( major, index ) => {
-		majorsText += major
-
-		if( index < props.user.majors.length - 1 ) {
-			majorsText += " | "
-		}
-	} )
-
 	return (
 		<Stack
 			sx={{
@@ -38,12 +32,12 @@ export default function ProfileCard( props: ProfileCardProps ) {
 					}}
 				/>
 				<Typography variant="h6">{props.user.firstName} {props.user.lastName}</Typography>
-				<Typography variant="caption">{majorsText}</Typography>
+				<Typography variant="caption">{getMajorsText( props.user.majors )}</Typography>
 			</Stack>
 			<Stack>
 				<Typography variant="subtitle2">Network</Typography>
-				<Typography variant="caption">10 followers</Typography>
-				<Typography variant="caption">15 posts</Typography>
+				<Typography variant="caption">{props.numFollowers} followers</Typography>
+				<Typography variant="caption">{props.numPosts} posts</Typography>
 			</Stack>
 		</Stack>
 	)
