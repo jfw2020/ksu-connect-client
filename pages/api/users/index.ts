@@ -1,13 +1,21 @@
-import executeQuery from "@/lib/db"
+import executeQuery, { IQueryParam } from "@/lib/db"
 import { User } from "@/types/userType"
 import { NextApiRequest, NextApiResponse } from "next"
 import { getCategories, getMajors } from "./[userId]"
 
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
+	const { query } = req.body
+
+	const params: IQueryParam[] = [{
+		name: "query",
+		value: query
+	}]
+
 	const results = await executeQuery( `
-		SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl
-		FROM KSUConnect.Users U;
-	` )
+		SELECT TOP(10) U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl
+		FROM KSUConnect.Users U
+		WHERE U.FirstName + ' ' + U.LastName LIKE '%' + ISNULL(@query, '') + '%';
+	`, params )
 
 	const users: User[] = []
 	for( let i = 0; i < results.length; i++ ) {

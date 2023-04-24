@@ -138,8 +138,10 @@ function SearchBox() {
 
 	const handleClick = React.useCallback( ( event: React.MouseEvent<HTMLElement> ) => {
 		setAnchor( event.currentTarget )
-		setLoading( true )
-	}, [] )
+		if( !anchor ) {
+			setLoading( true )
+		}
+	}, [anchor] )
 
 	const handleUserClick = React.useCallback( () => {
 		setAnchor( null )
@@ -155,14 +157,23 @@ function SearchBox() {
 		}
 
 		if( anchor && loading ) {
-			setTimeout( () => {
-				fetchUsers().then( () => setLoading( false ) )
-			}, 1000	)
+			fetchUsers().then( () => setLoading( false ) )
 		}
 		else if ( !anchor ) {
 			setUsers( [] )
 		}
 	}, [anchor, loading] )
+
+	React.useEffect( () => {
+		const fetchUsers = async () => {
+			const response = await axios.post( "/api/users", { query } )
+
+			const newUsers: User[] = response.data.users
+			setUsers( newUsers )
+		}
+
+		fetchUsers()
+	}, [ query ] )
 
 	return (
 		<ClickAwayListener onClickAway={() => setAnchor( null )}>
@@ -188,14 +199,12 @@ function SearchBox() {
 						<Fade {...TransitionProps} timeout={300}>
 							<Paper 
 								sx={{
-									width: "35ch",
+									width: "40ch",
 									display: "flex",
 									flexDirection: "column",
 									gap: 1,
 									padding: 1,
-									justifyContent: "center",
-									minHeight: 100,
-									maxHeight: 500,
+									maxHeight: 300,
 									overflowY: "auto"
 								}}
 								variant="outlined"
