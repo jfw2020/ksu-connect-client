@@ -105,7 +105,9 @@ export async function getPosts( userId?: string ) {
 		username: result.Username,
 		firstName: result.FirstName,
 		lastName: result.LastName,
-		imageUrl: result.ImageUrl
+		imageUrl: result.ImageUrl,
+		categories: [],
+		majors: []
 	} ) )
 
 	return {

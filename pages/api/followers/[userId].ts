@@ -6,23 +6,11 @@ import { getUser } from "../users/[userId]"
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const { userId } = req.query
 
-	const params: IQueryParam[] = [{
-		name: "userId",
-		value: userId as string
-	}]
-
-	const results = await executeQuery( `
-		SELECT F.FollowerId
-		FROM KSUConnect.Followers F
-		WHERE F.FollowingId = @userId
-	`, params )
+	const followerIds = await getFollowerIds( userId as string )
 
 	const users: User[] = []
-	for( let i = 0; i < results.length; i++ ) {
-		const result = results[i]
-		const userId = result.FollowerId
-
-		const user = await getUser( userId )
+	for( let i = 0; i < followerIds.length; i++ ) {
+		const user = await getUser( followerIds[i] )
 
 		if( user ) {
 			users.push( user )
@@ -46,4 +34,19 @@ export async function getNumFollowers( userId: string ) {
 	const result = parseInt( results[0].NumFollowers )
 
 	return result
+}
+
+export async function getFollowerIds( userId: string ) {
+	const params: IQueryParam[] = [{
+		name: "userId",
+		value: userId as string
+	}]
+
+	const results = await executeQuery( `
+		SELECT F.FollowerId
+		FROM KSUConnect.Followers F
+		WHERE F.FollowingId = @userId
+	`, params )
+
+	return results.map( result => result.FollowerId )
 }
