@@ -150,30 +150,16 @@ function SearchBox() {
 
 	React.useEffect( () => {
 		const fetchUsers = async () => {
-			const response = await axios( "/api/users" )
-
-			const newUsers: User[] = response.data.users
-			setUsers( newUsers )
-		}
-
-		if( anchor && loading ) {
-			fetchUsers().then( () => setLoading( false ) )
-		}
-		else if ( !anchor ) {
-			setUsers( [] )
-		}
-	}, [anchor, loading] )
-
-	React.useEffect( () => {
-		const fetchUsers = async () => {
 			const response = await axios.post( "/api/users", { query } )
 
 			const newUsers: User[] = response.data.users
 			setUsers( newUsers )
 		}
 
-		fetchUsers()
-	}, [ query ] )
+		if( anchor ) {
+			fetchUsers().then( () => setLoading( false ) )
+		}
+	}, [anchor, query] )
 
 	return (
 		<ClickAwayListener onClickAway={() => setAnchor( null )}>
@@ -215,6 +201,9 @@ function SearchBox() {
 											alignSelf: "center",
 										}}
 									/>
+								)}
+								{!loading && users.length === 0 && (
+									<Typography>No users</Typography>
 								)}
 								{!loading && users.map( user => (
 									<UserRow 

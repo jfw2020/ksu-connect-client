@@ -88,8 +88,8 @@ export default function FeedPage( props: FeedPageProps ) {
 	 */
 	// Initial render - initializes the users in the Redux store and fetches the user's feed from the API
 	React.useEffect( () => {
-		const fetchPosts = async () => {
-			const response = await axios( "/api/posts" )
+		const fetchFeed = async () => {
+			const response = await axios( "/api/posts/feed" )
 
 			const newPosts: Post[] = response.data.posts.map( ( post: Post ) => ( {
 				...post,
@@ -102,7 +102,7 @@ export default function FeedPage( props: FeedPageProps ) {
 			setPosts( newPosts )
 		}
 
-		fetchPosts().then( () => {
+		fetchFeed().then( () => {
 			setLoading( false )
 		} )
 	}, [ dispatch ] )

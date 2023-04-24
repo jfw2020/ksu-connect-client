@@ -14,10 +14,12 @@ import PostCard from "@/components/PostCard"
 import { getFollowingIds } from "../api/following/[userId]"
 import { withIronSessionSsr } from "iron-session/next"
 import { sessionOptions } from "@/lib/session"
+import { getFollowerIds } from "../api/followers/[userId]"
 
 interface UserPageProps {
 	user: User
 	followingIds: number[]
+	followerIds: number[]
 }
 
 export const getServerSideProps = withIronSessionSsr( async function( { req, query } ) {
@@ -26,6 +28,7 @@ export const getServerSideProps = withIronSessionSsr( async function( { req, que
 
 	const user = await getUser( userId )
 	const followingIds = await getFollowingIds( currentUserId )
+	const followerIds = await getFollowerIds( userId )
 
 	if( !user ) {
 		return {
@@ -39,7 +42,8 @@ export const getServerSideProps = withIronSessionSsr( async function( { req, que
 	return { 
 		props: {
 			user,
-			followingIds
+			followingIds,
+			followerIds
 		}
 	}
 }, sessionOptions )
@@ -60,6 +64,8 @@ export default function UserPage( props: UserPageProps ) {
 	const [ loading, setLoading] = React.useState( true )
 	// State to hold the id's that the current user is following
 	const [followingIds, setFollowingIds] = React.useState( props.followingIds )
+	// State to hold the ids that that follow the user
+	const [followerIds, setFollowerIds] = React.useState( props.followerIds )
 
 	/**
 	 * Callbacks
@@ -72,13 +78,15 @@ export default function UserPage( props: UserPageProps ) {
 			await axios.post( `/api/following/${props.user.userId}` )
 
 			setFollowingIds( prevState => [...prevState, userId] )
+			setFollowerIds( prevState => [...prevState, user?.userId || 0] )
 		}
 		else {
 			await axios.delete( `/api/following/${props.user.userId}` )
 
-			setFollowingIds( prevState => prevState.filter( followerId => followerId !== userId ) )
+			setFollowingIds( prevState => prevState.filter( followingId => followingId !== userId ) )
+			setFollowerIds( prevState => prevState.filter( followerId => followerId !== user?.userId ) )
 		}
-	}, [followingIds, props.user.userId] )
+	}, [followingIds, props.user.userId, user?.userId] )
 
 	/**
 	 * Effects
@@ -103,6 +111,10 @@ export default function UserPage( props: UserPageProps ) {
 			setLoading( false )
 		} )
 	}, [dispatch, props.user.userId] )
+
+	React.useEffect( () => {
+		setFollowerIds( props.followerIds )
+	}, [props.followerIds] )
 
 	/**
 	 * Render Variables
@@ -160,7 +172,7 @@ export default function UserPage( props: UserPageProps ) {
 									</Box>
 									<Typography variant="h4">{props.user.firstName} {props.user.lastName}</Typography>
 									<Typography variant="subtitle1">{getMajorsText( props.user.majors )}</Typography>
-									<Typography variant="caption">{followingIds.length} followers</Typography>
+									<Typography variant="caption">{followerIds.length} followers</Typography>
 								</Stack>
 							</Box>
 							<Divider />
