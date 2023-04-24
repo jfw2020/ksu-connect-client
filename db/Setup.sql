@@ -1,4 +1,4 @@
-USE [CIS560]; -- Your database here.
+--USE [CIS560]; -- Your database here.
 
 /*********************
  * Drop Tables
@@ -93,7 +93,7 @@ CREATE TABLE KSUConnect.UserMajors
 
 CREATE TABLE KSUConnect.UserCategories
 (
-   UserCategoriesId INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+   UserCategoryId INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
    UserId INT NOT NULL FOREIGN KEY
       REFERENCES KSUConnect.Users(UserId),
    CategoryId INT NOT NULL FOREIGN KEY
@@ -102,7 +102,7 @@ CREATE TABLE KSUConnect.UserCategories
 
 CREATE TABLE KSUConnect.PostCategories
 (
-   UserMajorId INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+   PostCategoryId INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
    PostId INT NOT NULL FOREIGN KEY
       REFERENCES KSUConnect.Posts(PostId),
    CategoryId INT NOT NULL FOREIGN KEY
