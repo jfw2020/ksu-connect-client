@@ -1,7 +1,7 @@
 import UserRow from "@/components/UserRow"
 import useUser from "@/lib/useUser"
 import { User } from "@/types/userType"
-import { Box, CircularProgress, Container, Stack, Tab, Tabs, Typography } from "@mui/material"
+import { Box, Button, CircularProgress, Container, Divider, FormControl, InputLabel, MenuItem, Select, Stack, Tab, Tabs, TextField, Typography } from "@mui/material"
 import axios from "axios"
 import Head from "next/head"
 import * as React from "react"
@@ -46,7 +46,7 @@ export default function Network() {
 						<UsersPanel />
 					</TabPanel>
 					<TabPanel value={tabIndex} index={2}>
-						<UsersPanel />
+						<DiscoverPanel />
 					</TabPanel>
 				</Box>
 			</main>
@@ -117,6 +117,121 @@ function UsersPanel( props: UsersPanelProps ) {
 					key={user.userId}
 				/>
 			) )}
+		</Stack>
+	)
+}
+
+function DiscoverPanel() {
+	const [status, setStatus] = React.useState( "" )
+	const [major, setMajor] = React.useState( "" )
+	const [category, setCategory] = React.useState( "" )
+	const [statuses, setStatuses] = React.useState<string[]>( [] )
+	const [majors, setMajors] = React.useState<string[]>( [] )
+	const [categories, setCategories] = React.useState<string[]>( [] )
+	const [users, setUsers] = React.useState<User[]>( [] )
+	const [loading, setLoading] = React.useState( true )
+
+	const handleClearFilters = React.useCallback( () => {
+		setStatus( "" )
+		setMajor( "" )
+		setCategory( "" )
+	}, [] )
+
+	React.useEffect( () => {
+		const fetchFilters = async () => {
+			const response = await axios( "/api/filters" )
+
+			setStatuses( response.data.statuses )
+			setMajors( response.data.majors )
+			setCategories( response.data.categories )
+		}
+
+		fetchFilters().then( () => setLoading( false ) )
+	}, [] )
+
+	React.useEffect( () => {
+		const fetchUsers = async () => {
+			const response = await axios.post( "/api/filters", {
+				status,
+				major,
+				category
+			} )
+
+			setUsers( response.data.users )
+		}
+
+		fetchUsers().then( () => setLoading( false ) )
+	}, [status, major, category] )
+
+	return (
+		<Stack gap={1}>
+			<Stack
+				sx={{
+					flexDirection: "row",
+					alignItems: "center"
+				}}
+				gap={1}
+			>
+				<FormControl sx={{ minWidth: 200 }}>
+					<InputLabel id="school-status-select">School Status</InputLabel>
+					<Select 
+						labelId="school-status-select"
+						label="School Status"
+						value={status}
+						onChange={e => setStatus( e.target.value )}
+					>
+						{statuses.map( item => (
+							<MenuItem value={item} key={item}>{item}</MenuItem>
+						) )}
+					</Select>
+				</FormControl>
+				<FormControl sx={{ minWidth: 200 }}>
+					<InputLabel id="major-select">Major</InputLabel>
+					<Select 
+						labelId="major-select"
+						label="Major"
+						value={major}
+						onChange={e => setMajor( e.target.value )}
+					>
+						{majors.map( item => (
+							<MenuItem value={item} key={item}>{item}</MenuItem>
+						) )}
+					</Select>
+				</FormControl>
+				<FormControl sx={{ minWidth: 200 }}>
+					<InputLabel id="category-select">Category</InputLabel>
+					<Select 
+						labelId="category-select"
+						label="Category"
+						value={category}
+						onChange={e => setCategory( e.target.value )}
+					>
+						{categories.map( item => (
+							<MenuItem value={item} key={item}>{item}</MenuItem>
+						) )}
+					</Select>
+				</FormControl>
+				<Button variant="contained" onClick={handleClearFilters}>Clear Filters</Button>
+			</Stack>
+			<Divider />
+			<Stack gap={1}>
+				{loading && (
+					<CircularProgress 
+						sx={{
+							alignSelf: "center",
+						}}
+					/>
+				)}
+				{!loading && users.length === 0 && (
+					<Typography>No users</Typography>
+				)}
+				{!loading && users.map( user => (
+					<UserRow 
+						user={user}
+						key={user.userId}
+					/>
+				) )}
+			</Stack>
 		</Stack>
 	)
 }
