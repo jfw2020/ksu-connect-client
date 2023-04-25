@@ -22,8 +22,9 @@ export async function getUser( userId: string ) {
 	}]
 
 	const results = await executeQuery( `
-		SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl
+		SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl, SS.Status 
 		FROM KSUConnect.Users U
+			INNER JOIN KSUConnect.SchoolStatuses SS ON SS.SchoolStatusId = U.SchoolStatusId
 		WHERE U.UserId = @userId;
 	`, params )
 	const result = results[0]
@@ -41,6 +42,7 @@ export async function getUser( userId: string ) {
 		firstName: result.FirstName,
 		lastName: result.LastName,
 		imageUrl: result.ImageUrl,
+		status: result.Status,
 		majors,
 		categories
 	}

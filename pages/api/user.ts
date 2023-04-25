@@ -18,6 +18,7 @@ async function handler( req: NextApiRequest, res: NextApiResponse<User> ) {
 			isLoggedIn: false,
 			userId: -1,
 			username: "",
+			status: "",
 			majors: [],
 			categories: []
 		} )

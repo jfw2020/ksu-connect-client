@@ -43,9 +43,10 @@ export async function getFeed( userId: string ) {
 	} ) )
 
 	results = await executeQuery( `
-		SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl
+		SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl, SS.Status 
 		FROM KSUConnect.Followers F
 			INNER JOIN KSUConnect.Users U ON U.UserId = F.FollowingId
+			INNER JOIN KSUConnect.SchoolStatuses SS ON SS.SchoolStatusId = U.SchoolStatusId
 		WHERE F.FollowerId = @userId
 			OR U.UserId = @userId
 	`, params )
@@ -56,6 +57,7 @@ export async function getFeed( userId: string ) {
 		firstName: result.FirstName,
 		lastName: result.LastName,
 		imageUrl: result.ImageUrl,
+		status: result.Status,
 		categories: [],
 		majors: []
 	} ) )

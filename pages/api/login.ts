@@ -23,8 +23,9 @@ async function handler(
 	]
 
 	const results = await executeQuery( `
-		SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl
+		SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl, SS.Status 
 		FROM KSUConnect.Users U
+			INNER JOIN KSUConnect.SchoolStatuses SS ON SS.SchoolStatusId = U.SchoolStatusId
 		WHERE U.Username = @username
 			AND U.PasswordHash = @passwordHash;
 	`, params )
@@ -45,6 +46,7 @@ async function handler(
 			firstName: result.FirstName,
 			lastName: result.LastName,
 			imageUrl: result.ImageUrl,
+			status: result.Status,
 			isLoggedIn: true,
 			majors,
 			categories

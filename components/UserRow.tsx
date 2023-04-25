@@ -22,7 +22,7 @@ export default function UserRow( props: UserRowProps ) {
 					src={props.user.imageUrl}
 				/>
 				<Stack>
-					<Typography variant="subtitle2">{props.user.firstName} {props.user.lastName}</Typography>
+					<Typography variant="subtitle2">{props.user.firstName} {props.user.lastName} | {props.user.status}</Typography>
 					<Typography variant="caption">{getMajorsText( props.user.majors )}</Typography>
 				</Stack>
 			</Box>

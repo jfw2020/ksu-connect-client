@@ -95,9 +95,10 @@ export async function getPosts( userId?: string ) {
 	} ) )
 
 	results = await executeQuery( `
-		SELECT DISTINCT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl
+		SELECT DISTINCT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl, SS.Status 
 		FROM KSUConnect.Posts P
 			INNER JOIN KSUConnect.Users U ON U.UserId = P.UserId
+			INNER JOIN KSUConnect.SchoolStatuses SS ON SS.SchoolStatusId = U.SchoolStatusId
 	` )
 
 	const users: User[] = results.map( result => ( {
@@ -106,6 +107,7 @@ export async function getPosts( userId?: string ) {
 		firstName: result.FirstName,
 		lastName: result.LastName,
 		imageUrl: result.ImageUrl,
+		status: result.Status,
 		categories: [],
 		majors: []
 	} ) )

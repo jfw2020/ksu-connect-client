@@ -12,8 +12,9 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 	}]
 
 	const results = await executeQuery( `
-		SELECT TOP(10) U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl
+		SELECT TOP(10) U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl, SS.Status 
 		FROM KSUConnect.Users U
+			INNER JOIN KSUConnect.SchoolStatuses SS ON SS.SchoolStatusId = U.SchoolStatusId
 		WHERE U.FirstName + ' ' + U.LastName LIKE '%' + ISNULL(@query, '') + '%';
 	`, params )
 
@@ -31,6 +32,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 			firstName: result.FirstName,
 			lastName: result.LastName,
 			imageUrl: result.ImageUrl,
+			status: result.Status,
 			majors,
 			categories
 		}

@@ -72,7 +72,7 @@ function Header( props: HeaderProps ) {
 					src={user.imageUrl}
 				/>
 				<Box>
-					<Typography variant="subtitle2">{user.firstName} {user.lastName}</Typography>
+					<Typography variant="subtitle2">{user.firstName} {user.lastName} | {user.status}</Typography>
 					<Typography variant="caption">Computer Science</Typography>
 				</Box>
 			</Box>

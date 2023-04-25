@@ -32,6 +32,7 @@ export default function ProfileCard( props: ProfileCardProps ) {
 					}}
 				/>
 				<Typography variant="h6">{props.user.firstName} {props.user.lastName}</Typography>
+				<Typography variant="subtitle1">{props.user.status}</Typography>
 				<Typography variant="caption">{getMajorsText( props.user.majors )}</Typography>
 			</Stack>
 			<Stack>

@@ -36,12 +36,16 @@ export default function Network() {
 						<Tabs value={tabIndex} onChange={( _, val ) => setTabIndex( val )}>
 							<Tab label="Following" />
 							<Tab label="Followers" />
+							<Tab label="Discover" />
 						</Tabs>
 					</Box>
 					<TabPanel value={tabIndex} index={0}>
 						<UsersPanel following />
 					</TabPanel>
 					<TabPanel value={tabIndex} index={1}>
+						<UsersPanel />
+					</TabPanel>
+					<TabPanel value={tabIndex} index={2}>
 						<UsersPanel />
 					</TabPanel>
 				</Box>
@@ -103,6 +107,9 @@ function UsersPanel( props: UsersPanelProps ) {
 						alignSelf: "center",
 					}}
 				/>
+			)}
+			{!loading && users.length === 0 && (
+				<Typography>No users</Typography>
 			)}
 			{!loading && users.map( user => (
 				<UserRow 
