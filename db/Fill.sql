@@ -7,9 +7,7 @@ SELECT
     'password', -- static password
     LEFT(NEWID(), 10), -- generate random first name
     LEFT(NEWID(), 10), -- generate random last name
-    (
-        SELECT N'https://picsum.photos/id/' + CONVERT(NVARCHAR(8), ROUND(RAND() * 100, 0)) + N'/200'
-    ),
+    N'https://picsum.photos/id/' + CAST(ABS(CHECKSUM(NEWID())) % 100 AS NVARCHAR(3)) + N'/200',
     SS.SchoolStatusId -- assign random school status,
 FROM KSUConnect.SchoolStatuses SS
 CROSS JOIN (SELECT TOP 100 * FROM sys.objects) AS O; -- generate 100 random rows
