@@ -39,10 +39,16 @@ CROSS JOIN (SELECT TOP 100 * FROM sys.objects) AS O -- generate 100 random rows
 WHERE RAND() < 0.2; -- randomly generate a post for 20% of users
 
 -- Insert Followers with random data
-INSERT INTO KSUConnect.Followers(FollowerId, FollowingId)
-SELECT 
-    U1.UserId,
-    U2.UserId
-FROM KSUConnect.Users U1
-CROSS JOIN KSUConnect.Users U2
-WHERE U1.UserId <> U2.UserId AND RAND() < 0.4
+DECLARE @limit INT = 1;
+DECLARE @userCount INT;
+SELECT @userCount = COUNT(*) FROM KSUConnect.Users;
+
+WHILE @limit <= (@userCount/2)
+BEGIN
+    DECLARE @followerId INT = (SELECT TOP 1 UserId FROM KSUConnect.Users ORDER BY NEWID());
+    DECLARE @followingId INT = (SELECT TOP 1 UserId FROM KSUConnect.Users WHERE UserId != @followerId ORDER BY NEWID());
+    
+    INSERT INTO KSUConnect.Followers(FollowerId, FollowingId) VALUES (@followerId, @followingId);
+    
+    SET @limit = @limit + 1;
+END
