@@ -88,6 +88,12 @@ export default function UserPage( props: UserPageProps ) {
 		}
 	}, [followingIds, props.user.userId, user?.userId] )
 
+	const handleDeletePost = React.useCallback( async ( postId: number ) => {
+		await axios.delete( `/api/posts/${postId}` )
+
+		setPosts( prevState => prevState.filter( post => post.postId !== postId ) )
+	}, [] )
+
 	/**
 	 * Effects
 	 */
@@ -181,13 +187,20 @@ export default function UserPage( props: UserPageProps ) {
 									<CircularProgress />
 								)}
 								{!loading && posts.map( ( post, index ) => (
-									<PostCard post={post} key={index} />
+									<PostCard 
+										editable={post.userId === user?.userId} 
+										post={post} 
+										key={index}  
+										handleDeleteClicked={() => handleDeletePost( post.postId )}
+									/>
 								) )}
 							</Stack>
 						</Stack>
 					</Grid>
 					<Grid item xs={4} >
-						<RecommendedUsersCard />
+						<RecommendedUsersCard 
+							userId={props.user.userId}
+						/>
 					</Grid>
 				</Grid>
 			</main>

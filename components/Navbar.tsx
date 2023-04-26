@@ -180,6 +180,9 @@ function SearchBox() {
 					anchorEl={anchor}
 					placement="bottom-start"
 					transition
+					sx={{
+						zIndex: 999
+					}}
 				>
 					{( { TransitionProps } ) => (
 						<Fade {...TransitionProps} timeout={300}>

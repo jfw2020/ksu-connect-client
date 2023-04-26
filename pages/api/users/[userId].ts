@@ -22,7 +22,7 @@ export async function getUser( userId: string ) {
 	}]
 
 	const results = await executeQuery( `
-		SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl, SS.Status 
+		SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl, SS.Status
 		FROM KSUConnect.Users U
 			INNER JOIN KSUConnect.SchoolStatuses SS ON SS.SchoolStatusId = U.SchoolStatusId
 		WHERE U.UserId = @userId;

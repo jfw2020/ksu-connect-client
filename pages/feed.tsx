@@ -83,6 +83,12 @@ export default function FeedPage( props: FeedPageProps ) {
 		}
 	}, [] )
 
+	const handleDeletePost = React.useCallback( async ( postId: number ) => {
+		await axios.delete( `/api/posts/${postId}` )
+
+		setPosts( prevState => prevState.filter( post => post.postId !== postId ) )
+	}, [] )
+
 	/**
 	 * Effects
 	 */
@@ -143,12 +149,19 @@ export default function FeedPage( props: FeedPageProps ) {
 								<CircularProgress />
 							)}
 							{!loading && posts.map( ( post, index ) => (
-								<PostCard post={post} key={index} />
+								<PostCard 
+									post={post} 
+									key={index} 
+									editable={props.user.userId === post.userId}
+									handleDeleteClicked={() => handleDeletePost( post.postId )}
+								/>
 							) )}
 						</Stack>
 					</Grid>
 					<Grid item xs={3} >
-						<RecommendedUsersCard />
+						<RecommendedUsersCard 
+							userId={props.user.userId}
+						/>
 					</Grid>
 				</Grid>
 			</main>

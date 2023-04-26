@@ -1,7 +1,7 @@
 import { sessionOptions } from "@/lib/session"
 import useUser from "@/lib/useUser"
 import { Visibility, VisibilityOff } from "@mui/icons-material"
-import { Box, Button, Container, Divider, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Stack, TextField, Typography } from "@mui/material"
+import { Box, Button, Container, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, Stack, TextField, Typography } from "@mui/material"
 import axios from "axios"
 import { withIronSessionSsr } from "iron-session/next"
 import Head from "next/head"
@@ -130,8 +130,6 @@ export default function Home() {
 								/>
 							</FormControl>
 							<Button variant="contained" onClick={handleLogin}>Sign In</Button>
-							<Divider />
-							<Button variant="outlined">Sign Up</Button>
 						</Stack>
 					</Stack>
 				</Box>

@@ -1,7 +1,7 @@
 import UserRow from "@/components/UserRow"
 import useUser from "@/lib/useUser"
 import { User } from "@/types/userType"
-import { Box, Button, CircularProgress, Container, Divider, FormControl, InputLabel, MenuItem, Select, Stack, Tab, Tabs, TextField, Typography } from "@mui/material"
+import { Box, Button, CircularProgress, Container, Divider, FormControl, InputLabel, MenuItem, Pagination, Select, Stack, Tab, Tabs, Typography } from "@mui/material"
 import axios from "axios"
 import Head from "next/head"
 import * as React from "react"
@@ -130,6 +130,7 @@ function DiscoverPanel() {
 	const [categories, setCategories] = React.useState<string[]>( [] )
 	const [users, setUsers] = React.useState<User[]>( [] )
 	const [loading, setLoading] = React.useState( true )
+	const [page, setPage] = React.useState( 1 )
 
 	const handleClearFilters = React.useCallback( () => {
 		setStatus( "" )
@@ -146,7 +147,7 @@ function DiscoverPanel() {
 			setCategories( response.data.categories )
 		}
 
-		fetchFilters().then( () => setLoading( false ) )
+		fetchFilters()
 	}, [] )
 
 	React.useEffect( () => {
@@ -154,13 +155,21 @@ function DiscoverPanel() {
 			const response = await axios.post( "/api/filters", {
 				status,
 				major,
-				category
+				category,
+				page
 			} )
 
 			setUsers( response.data.users )
 		}
 
-		fetchUsers().then( () => setLoading( false ) )
+		setLoading( true )
+		setTimeout( () => {
+			fetchUsers().then( () => setLoading( false ) )
+		}, 1000 )
+	}, [status, major, category, page] )
+
+	React.useEffect( () => {
+		setPage( 1 )
 	}, [status, major, category] )
 
 	return (
@@ -214,6 +223,7 @@ function DiscoverPanel() {
 				<Button variant="contained" onClick={handleClearFilters}>Clear Filters</Button>
 			</Stack>
 			<Divider />
+			<Pagination sx={{ alignSelf: "center" }} count={10} page={page} onChange={( e, value ) => setPage( value )} />
 			<Stack gap={1}>
 				{loading && (
 					<CircularProgress 

@@ -1,13 +1,16 @@
 -- TODO: Followers connection generation didn't work
 
 -- Insert Users with random data
-INSERT INTO KSUConnect.Users(Username, PasswordHash, FirstName, LastName, SchoolStatusId)
+INSERT INTO KSUConnect.Users(Username, PasswordHash, FirstName, LastName, ImageUrl, SchoolStatusId)
 SELECT 
     CONCAT('user', ROW_NUMBER() OVER(ORDER BY (SELECT NULL))), -- generate username
     'password', -- static password
     LEFT(NEWID(), 10), -- generate random first name
     LEFT(NEWID(), 10), -- generate random last name
-    SS.SchoolStatusId -- assign random school status
+    (
+        SELECT N'https://picsum.photos/id/' + CONVERT(NVARCHAR(8), ROUND(RAND() * 100, 0)) + N'/200'
+    ),
+    SS.SchoolStatusId -- assign random school status,
 FROM KSUConnect.SchoolStatuses SS
 CROSS JOIN (SELECT TOP 100 * FROM sys.objects) AS O; -- generate 100 random rows
 

@@ -49,6 +49,14 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 				{
 					name: "category",
 					value: body.category
+				},
+				{
+					name: "pageSize",
+					value: 10
+				},
+				{
+					name: "page",
+					value: body.page
 				}
 			]
 
@@ -72,6 +80,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 							WHERE UC.UserId = U.UserId
 						))
 				ORDER BY U.LastName ASC, U.FirstName ASC
+				OFFSET ((@page - 1) * @pageSize) ROWS FETCH NEXT 10 ROWS ONLY;
 			`, params )
 
 			const users: User[] = []

@@ -5,7 +5,11 @@ import axios from "axios"
 import * as React from "react"
 import UserRow from "./UserRow"
 
-export default function RecommendedUsersCard() {
+interface RecommendUsersCardProps {
+	userId: number
+}
+
+export default function RecommendedUsersCard( props: RecommendUsersCardProps ) {
 	/**
 	 * Hooks
 	 */
@@ -23,7 +27,9 @@ export default function RecommendedUsersCard() {
 	// Initial render - initializes the users state
 	React.useEffect( () => {
 		const fetchUsers = async () => {
-			const response = await axios( "/api/users" )
+			const response = await axios.post( "/api/users/recommended", {
+				userId: props.userId
+			} )
 
 			const newUsers: User[] = response.data.users
 
@@ -33,7 +39,7 @@ export default function RecommendedUsersCard() {
 		fetchUsers().then( () => {
 			setLoading( false )
 		} ) 
-	}, [ dispatch ] )
+	}, [dispatch, props.userId] )
 	return (
 		<Stack
 			sx={{
@@ -52,6 +58,9 @@ export default function RecommendedUsersCard() {
 						alignSelf: "center" 
 					}} 
 				/>
+			)}
+			{!loading && users.length === 0 && (
+				<Typography>No Users</Typography>
 			)}
 			{!loading && users.map( user => (
 				<UserRow 

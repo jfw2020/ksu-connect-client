@@ -31,7 +31,7 @@ export async function getFeed( userId: string ) {
 			INNER JOIN KSUConnect.Posts P ON P.UserId = F.FollowingId
 		WHERE F.FollowerId = @userId
 			OR P.UserId = @userId
-		ORDER BY P.UpdatedOn DESC
+		ORDER BY P.CreatedOn DESC
 	`, params )
 
 	const posts: Post[] = results.map( result => ( {
