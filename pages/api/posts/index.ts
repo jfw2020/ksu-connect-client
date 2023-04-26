@@ -27,7 +27,7 @@ async function handler( req: NextApiRequest, res: NextApiResponse ) {
 		case "POST": {
 			const userId = req.session.user?.userId || 0
 
-			const params: IQueryParam[] = [
+			let params: IQueryParam[] = [
 				{
 					name: "userId",
 					value: userId
@@ -46,6 +46,26 @@ async function handler( req: NextApiRequest, res: NextApiResponse ) {
 			const result = results[0]
 
 			if( result ) {
+				for( let i = 0; i < body.categories.length; i++ ) {
+					params = [
+						{
+							name: "postId",
+							value: result.PostId
+						},
+						{
+							name: "category",
+							value: body.categories[i]
+						}
+					]
+
+					await executeQuery( `
+						INSERT KSUConnect.PostCategories(PostId, CategoryId)
+						SELECT @postId, C.CategoryId
+						FROM KSUConnect.Categories C
+						WHERE C.[Name] = @category
+					`, params )
+				}
+
 				const post: Post = {
 					postId: result.PostId,
 					userId: result.UserId,

@@ -61,7 +61,27 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 			]
 
 			const results = await executeQuery( `
-				SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl, SS.Status 
+				SELECT U.UserId, U.Username, U.FirstName, U.LastName, U.ImageUrl, SS.Status,
+					(
+						SELECT ROUND(COUNT(*) / 10, 0) + 1
+						FROM KSUConnect.Users U
+							INNER JOIN KSUConnect.SchoolStatuses SS ON SS.SchoolStatusId = U.SchoolStatusId
+						WHERE (@status = N'' OR SS.[Status] = @status)
+							AND (@major = N'' OR @major IN 
+								(
+									SELECT M.[Name]
+									FROM KSUConnect.UserMajors UM
+										INNER JOIN KSUConnect.Majors M ON M.MajorId = UM.MajorId
+									WHERE UM.UserId = U.UserId
+								))
+							AND (@category = N'' OR @category IN 
+								(
+									SELECT C.[Name]
+									FROM KSUConnect.UserCategories UC
+										INNER JOIN KSUConnect.Categories C ON C.CategoryId = UC.CategoryId
+									WHERE UC.UserId = U.UserId
+								))
+					) AS PageCount
 				FROM KSUConnect.Users U
 					INNER JOIN KSUConnect.SchoolStatuses SS ON SS.SchoolStatusId = U.SchoolStatusId
 				WHERE (@status = N'' OR SS.[Status] = @status)
@@ -105,7 +125,9 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 				users.push( user )
 			}
 
-			res.status( 200 ).json( { users } )
+			const pageCount = results.length > 0 ? results[0].PageCount : 0
+
+			res.status( 200 ).json( { users, pageCount } )
 		}
 	}
 

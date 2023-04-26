@@ -5,7 +5,7 @@ import { User } from "@/types/userType"
 
 interface CreatePostCardProps {
 	user: User
-	onCreatePost: ( content: string ) => Promise<void>
+	onCreatePost: ( content: string, categories: string[] ) => Promise<void>
 }
 
 /**

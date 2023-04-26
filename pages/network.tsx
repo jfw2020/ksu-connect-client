@@ -131,6 +131,7 @@ function DiscoverPanel() {
 	const [users, setUsers] = React.useState<User[]>( [] )
 	const [loading, setLoading] = React.useState( true )
 	const [page, setPage] = React.useState( 1 )
+	const [pageCount, setPageCount] = React.useState( 0 )
 
 	const handleClearFilters = React.useCallback( () => {
 		setStatus( "" )
@@ -160,6 +161,7 @@ function DiscoverPanel() {
 			} )
 
 			setUsers( response.data.users )
+			setPageCount( response.data.pageCount )
 		}
 
 		setLoading( true )
@@ -223,7 +225,7 @@ function DiscoverPanel() {
 				<Button variant="contained" onClick={handleClearFilters}>Clear Filters</Button>
 			</Stack>
 			<Divider />
-			<Pagination sx={{ alignSelf: "center" }} count={10} page={page} onChange={( e, value ) => setPage( value )} />
+			<Pagination sx={{ alignSelf: "center" }} count={pageCount} page={page} onChange={( e, value ) => setPage( value )} />
 			<Stack gap={1}>
 				{loading && (
 					<CircularProgress 

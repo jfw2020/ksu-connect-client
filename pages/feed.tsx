@@ -66,9 +66,10 @@ export default function FeedPage( props: FeedPageProps ) {
 	/**
 	 * Callbacks
 	 */
-	const handleCreatePost = React.useCallback( async ( content: string ) => {
+	const handleCreatePost = React.useCallback( async ( content: string, categories: string[] ) => {
 		const response = await axios.post( "/api/posts", {
-			content
+			content,
+			categories
 		} )
 		const post = response.data.post
 
