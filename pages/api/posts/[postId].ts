@@ -2,6 +2,18 @@ import executeQuery, { IQueryParam } from "@/lib/db"
 import { Post } from "@/types/postType"
 import { NextApiRequest, NextApiResponse } from "next"
 
+/**
+ * /api/posts/[postId]
+ * 
+ * GET:
+ * Returns the posts with the given [postId]
+ * 
+ * POST:
+ * Updates a post in the DB with the given [postId] to have new content
+ * 
+ * DELETE:
+ * Deletes a post with the given [postId]
+ */
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const { 
 		query, 

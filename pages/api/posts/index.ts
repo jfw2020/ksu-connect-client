@@ -4,6 +4,15 @@ import { User } from "@/types/userType"
 import { NextApiRequest, NextApiResponse } from "next"
 import { withIronSessionApiRoute } from "iron-session/next"
 import { sessionOptions } from "@/lib/session"
+/**
+ * /api/posts
+ * 
+ * GET:
+ * Returns a list of all the posts in the DB
+ * 
+ * POST:
+ * Creates a post in the DB 
+ */
 
 async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const { 
@@ -84,6 +93,7 @@ async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	
 }
 
+// Returns a list of posts that a given userId has created
 export async function getPosts( userId?: string ) {
 	const params: IQueryParam[] = [{
 		name: "userId",

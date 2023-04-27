@@ -5,6 +5,13 @@ import { User } from "@/types/userType"
 import { withIronSessionApiRoute } from "iron-session/next"
 import { NextApiRequest, NextApiResponse } from "next"
 
+/**
+ * /api/posts/feed
+ * 
+ * GET:
+ * Returns a feed for the currently logged in user. This consists of all the
+ * posts from the users that the logged in user follows.
+ */
 async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const userId = req.session.user?.userId.toString() || "0"
 
@@ -19,6 +26,7 @@ async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	} )
 }
 
+// Returns a list of posts from all the users that a given userId follows
 export async function getFeed( userId: string ) {
 	const params: IQueryParam[] = [{
 		name: "userId",

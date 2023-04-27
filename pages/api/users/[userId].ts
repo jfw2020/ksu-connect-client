@@ -2,6 +2,12 @@ import executeQuery, { IQueryParam } from "@/lib/db"
 import { User } from "@/types/userType"
 import { NextApiRequest, NextApiResponse } from "next"
 
+/**
+ * /api/users/[userId]
+ * 
+ * GET:
+ * Returns a User with the given [userId]
+ */
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const { userId } = req.query
 
@@ -15,6 +21,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 	}
 }
 
+// Returns a user from the DB with the given userId
 export async function getUser( userId: string ) {
 	const params: IQueryParam[] = [{
 		name: "userId",
@@ -50,6 +57,7 @@ export async function getUser( userId: string ) {
 	return user
 }
 
+// Returns a list of majors that a given userId is associated with
 export async function getMajors( userId: string ) {
 	const params: IQueryParam[] = [{
 		name: "userId",
@@ -66,6 +74,7 @@ export async function getMajors( userId: string ) {
 	return results.map( result => result.Name ) as string[]
 }
 
+// Returns a list of categories that a given userId is associated with
 export async function getCategories( userId: string ) {
 	const params: IQueryParam[] = [{
 		name: "userId",

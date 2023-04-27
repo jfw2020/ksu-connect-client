@@ -2,6 +2,12 @@ import type { NextApiRequest, NextApiResponse } from "next"
 import { withIronSessionApiRoute } from "iron-session/next"
 import { sessionOptions } from "@/lib/session"
 
+/**
+ * /api/logout
+ * 
+ * GET:
+ * Logs the current user out of the system.
+ */
 async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
@@ -13,7 +19,7 @@ async function handler(
 		lastName: "",
 		imageUrl: "",
 		isLoggedIn: false,
-		userId: -1,
+		userId: 0,
 		username: ""
 	} )
 }

@@ -3,6 +3,12 @@ import { User } from "@/types/userType"
 import { NextApiRequest, NextApiResponse } from "next"
 import { getUser } from "../users/[userId]"
 
+/**
+ * /api/followers/[userId]
+ * 
+ * GET:
+ * Returns a list of all the followerIds that the given [userId] is followed by
+ */
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const { userId } = req.query
 
@@ -20,6 +26,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 	res.status( 200 ).json( { users } )
 }
 
+// Returns the number of followers of a given userId
 export async function getNumFollowers( userId: string ) {
 	const params: IQueryParam[] = [{
 		name: "userId",
@@ -36,6 +43,7 @@ export async function getNumFollowers( userId: string ) {
 	return result
 }
 
+// Returns a list of followerIds that follow a given userId
 export async function getFollowerIds( userId: string ) {
 	const params: IQueryParam[] = [{
 		name: "userId",

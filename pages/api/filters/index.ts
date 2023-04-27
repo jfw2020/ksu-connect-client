@@ -3,6 +3,16 @@ import { User } from "@/types/userType"
 import { NextApiRequest, NextApiResponse } from "next"
 import { getMajors, getCategories } from "../users/[userId]"
 
+/**
+ * /api/filters
+ * 
+ * GET:
+ * Returns a list of all the SchoolStatuses, Majors, and Categories from the DB
+ * 
+ * POST:
+ * Allows the user to send any combination of status, major, and category and returns
+ * a list of Users that matches that query
+ */
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const {
 		method,
@@ -11,6 +21,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 
 	switch( method ) {
 		case "GET": {
+			// Gets all the filters from the DB
 			const statuses = await executeQuery( `
 				SELECT SS.Status
 				FROM KSUConnect.SchoolStatuses SS
@@ -37,6 +48,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 			break
 		}
 		case "POST": {
+			// Querys the database for paginated results from a given status, major, or category
 			const params: IQueryParam[] = [
 				{
 					name: "status",

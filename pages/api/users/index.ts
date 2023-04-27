@@ -3,6 +3,12 @@ import { User } from "@/types/userType"
 import { NextApiRequest, NextApiResponse } from "next"
 import { getCategories, getMajors } from "./[userId]"
 
+/**
+ * /api/users
+ * 
+ * GET:
+ * Returns a list of users whose names matche the given query
+ */
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const { query } = req.body
 

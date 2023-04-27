@@ -3,6 +3,18 @@ import { User } from "@/types/userType"
 import { NextApiRequest, NextApiResponse } from "next"
 import { getCategories, getMajors } from "./[userId]"
 
+/**
+ * /api/users/recommended
+ * 
+ * GET:
+ * Returns a list of users that are recommended for a given userId to follow.
+ * The recommendation algorithm works in the following way:
+ * 		A User is given 4 points for each major they share with the userId
+ * 		A User is given 2 points for each category they share with the userId
+ * 		A User is given 1 point for each User that both User and userId are following
+ * These points are then totaled into a "Recommendedness" score, and the Users with the
+ * highest scores are then recommended to the userId
+ */
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const { userId } = req.body
 

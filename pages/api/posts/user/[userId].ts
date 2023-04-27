@@ -2,6 +2,12 @@ import { NextApiRequest, NextApiResponse } from "next"
 import { getPosts } from ".."
 import executeQuery, { IQueryParam } from "@/lib/db"
 
+/**
+ * /api/posts/user/[userId]
+ * 
+ * GET:
+ * Returns a list of posts that a given [userId] has created
+ */
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const { userId } = req.query
 
@@ -16,6 +22,7 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 	} )
 }
 
+// Returns the number of posts a given userId has created
 export async function getNumPosts( userId: string ) {
 	const params: IQueryParam[] = [{
 		name: "userId",

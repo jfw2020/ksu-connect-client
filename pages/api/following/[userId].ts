@@ -5,6 +5,20 @@ import { getUser } from "../users/[userId]"
 import { withIronSessionApiRoute } from "iron-session/next"
 import { sessionOptions } from "@/lib/session"
 
+/**
+ * /api/following/[userId]
+ * 
+ * GET:
+ * Returns a list of Users that a given [userId] is following
+ * 
+ * POST:
+ * Creates a record that establishes that the currently logged in user 
+ * is now following the given [userId]
+ * 
+ * DELETE:
+ * Removes the record that establishes that the currently logged in user 
+ * is following the given [userId]
+ */
 async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const { 
 		method,
@@ -83,6 +97,7 @@ async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	
 }
 
+// Returns a list of followingIds that a given userId is following
 export async function getFollowingIds( userId: string ) {
 	const params: IQueryParam[] = [{
 		name: "userId",

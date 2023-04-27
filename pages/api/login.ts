@@ -5,11 +5,18 @@ import { withIronSessionApiRoute } from "iron-session/next"
 import { sessionOptions } from "@/lib/session"
 import { getCategories, getMajors } from "./users/[userId]"
 
+/**
+ * /api/login
+ * 
+ * POST:
+ * Logs in a user with a given username and password. Makes sure to update the req.session object
+ * to show that a user is currently logged in.
+ */
 async function handler(
 	req: NextApiRequest,
 	res: NextApiResponse
 ) {
-	const passwordHash = req.body.password // TODO hash this password
+	const passwordHash = req.body.password // For our purposes, we don't actually need to hash this, but we would in a production environment
 
 	const params: IQueryParam[] = [
 		{
