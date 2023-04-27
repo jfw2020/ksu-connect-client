@@ -3,6 +3,9 @@ import * as React from "react"
 import CreatePostModal from "./CreatePostModal"
 import { User } from "@/types/userType"
 
+/**
+ * Props for the CreatePostCard component
+ */
 interface CreatePostCardProps {
 	user: User
 	onCreatePost: ( content: string, categories: string[] ) => Promise<void>

@@ -18,19 +18,29 @@ interface PostCardProps {
 /**
  * PostCard
  * 
- * This component displays a post the user. Each post
+ * This component displays a post to the user. Each post
  * shows the user that created it and the actual content
  * within the post.
  */
 export default function PostCard( props: PostCardProps ) {
+	/**
+	 * State
+	 */
+	// State to hold the content the user is typing
 	const [content, setContent] = React.useState( props.post.content )
+	// State that holds if the user is currently editing or not
 	const [editing, setEditing] = React.useState( false )
 
+	/**
+	 * Callbacks
+	 */
+	// Cancels editing a post
 	const handleCancelClicked = React.useCallback( () => {
 		setEditing( false )
 		setContent( props.post.content )
 	}, [props.post.content] )
 
+	// Updates the post in the DB with the new content
 	const handleDoneClicked = React.useCallback( async () => {
 		await axios.post( `/api/posts/${props.post.postId}`, {
 			content
@@ -39,6 +49,10 @@ export default function PostCard( props: PostCardProps ) {
 		setEditing( false )
 	}, [props.post.postId, content] )
 
+	/**
+	 * Effects
+	 */
+	// Whenever props.post is changed, this updates the content to match it
 	React.useEffect( () => {
 		setContent( props.post.content )
 	}, [props.post] )

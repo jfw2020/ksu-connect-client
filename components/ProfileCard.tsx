@@ -2,13 +2,24 @@ import { getMajorsText } from "@/lib/helpers"
 import { User } from "@/types/userType"
 import { Avatar, Divider, Link, Stack, Typography } from "@mui/material"
 
+/**
+ * Props for the ProfileCard component
+ */
 interface ProfileCardProps {
 	user: User
 	numFollowers: number
 	numPosts: number
 }
 
+/**
+ * ProfileCard Component
+ * 
+ * This component shows the currently logged in user's profile information
+ */
 export default function ProfileCard( props: ProfileCardProps ) {
+	/**
+	 * Render
+	 */
 	return (
 		<Stack
 			sx={{

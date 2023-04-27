@@ -5,20 +5,31 @@ import axios from "axios"
 import * as React from "react"
 import UserRow from "./UserRow"
 
+/**
+ * Props for the RecommendedUsersCard component
+ */
 interface RecommendUsersCardProps {
 	userId: number
 }
 
+/**
+ * RecommendedUsersCard Component
+ * 
+ * This component displays all of the recommended users for a user to follow.
+ */
 export default function RecommendedUsersCard( props: RecommendUsersCardProps ) {
 	/**
 	 * Hooks
 	 */
+	// Dispatches an action to the store
 	const dispatch = useAppDispatch()
 
 	/**
 	 * State
 	 */
+	// State that holds the list of recommended users
 	const [ users, setUsers ] = React.useState( [] as User[] )
+	// State that holds if the users are loading from the DB
 	const [ loading, setLoading ] = React.useState( true )
 
 	/**
@@ -40,6 +51,10 @@ export default function RecommendedUsersCard( props: RecommendUsersCardProps ) {
 			setLoading( false )
 		} ) 
 	}, [dispatch, props.userId] )
+
+	/**
+	 * Render
+	 */
 	return (
 		<Stack
 			sx={{

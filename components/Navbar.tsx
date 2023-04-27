@@ -66,11 +66,16 @@ const StyledInputBase = styled( InputBase )( ( { theme } ) => ( {
  * navigation between pages.
  */
 export default function Navbar( ) {
+	/**
+	 * Hooks
+	 */
+	// Uses the currently logged in user
 	const { user, mutateUser } = useUser()
 
 	/**
 	 * Callbacks
 	 */
+	// Logs the user out
 	const handleLogout = React.useCallback( async () => {
 		const response = await axios( "/api/logout" )
 
@@ -130,12 +135,29 @@ export default function Navbar( ) {
 	)
 }
 
+/**
+ * SearchBox Component
+ * 
+ * This component renders the search box in the Navbar. It allows the user
+ * to search the DB for a specific user by name.
+ */
 function SearchBox() {
+	/**
+	 * State
+	 */
+	// State to hold the current anchor for the popper
 	const [ anchor, setAnchor ] = React.useState<null | HTMLElement>( null )
+	// State to hold if results are loading
 	const [ loading, setLoading ] = React.useState( false )
+	// State to hold the users that match the query
 	const [ users, setUsers ] = React.useState<User[]>( [] )
+	// State to hold the query string
 	const [ query, setQuery ] = React.useState( "" )
 
+	/**
+	 * Callbacks
+	 */
+	// Shows the popover menu when the SearchBox is clicked
 	const handleClick = React.useCallback( ( event: React.MouseEvent<HTMLElement> ) => {
 		setAnchor( event.currentTarget )
 		if( !anchor ) {
@@ -143,11 +165,16 @@ function SearchBox() {
 		}
 	}, [anchor] )
 
+	// Empties the query string and stops showing the popper
 	const handleUserClick = React.useCallback( () => {
 		setAnchor( null )
 		setQuery( "" )
 	}, [] )
 
+	/**
+	 * Effects
+	 */
+	// Updates whenever the query changes - queries the DB for users that match the query string
 	React.useEffect( () => {
 		const fetchUsers = async () => {
 			const response = await axios.post( "/api/users", { query } )
@@ -161,6 +188,9 @@ function SearchBox() {
 		}
 	}, [anchor, query] )
 
+	/**
+	 * Render
+	 */
 	return (
 		<ClickAwayListener onClickAway={() => setAnchor( null )}>
 			<Box>

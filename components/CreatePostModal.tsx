@@ -27,23 +27,27 @@ export default function CreatePostModal( props: CreatePostModalProps ) {
 	const [ content, setContent ] = React.useState( "" )
 	// State to hold the categories for the post
 	const [ categories, setCategories ] = React.useState<string[]>( [] )
+	// State to hold all the available categories
 	const [ items, setItems ] = React.useState<string[]>( [] )
 
 	/**
 	 * Callbacks
 	 */
+	// Called when the modal is closed - clears the inputs
 	const onClose = React.useCallback( () => {
 		setContent( "" )
 		setCategories( [] )
 		props.onClose()
 	}, [props] )
 	
+	// Calls the parents createPost() function and closes the modal
 	const handleCreatePost = React.useCallback( async () => {
 		await props.onCreatePost( content, categories )
 
 		onClose()
 	}, [content, onClose, props, categories] )
 
+	// Initializes the category filters on first render
 	React.useEffect( () => {
 		const fetchFilters = async () => {
 			const response = await axios( "/api/filters" )
