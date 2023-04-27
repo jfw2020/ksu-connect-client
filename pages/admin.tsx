@@ -1,5 +1,7 @@
-import UserRow from "@/components/UserRow"
-import useUser from "@/lib/useUser"
+import PostCard from "@/components/PostCard"
+import { useAppDispatch } from "@/hooks"
+import { usersActions } from "@/slices/usersSlice"
+import { Post } from "@/types/postType"
 import { User } from "@/types/userType"
 import { Box, Button, CircularProgress, Container, Divider, FormControl, InputLabel, MenuItem, Pagination, Select, Stack, Tab, Tabs, Typography } from "@mui/material"
 import axios from "axios"
@@ -7,11 +9,10 @@ import Head from "next/head"
 import * as React from "react"
 
 /**
- * NetworkPage Component
+ * AdminPage Component
  * 
- * This component is the page that shows the user all of their connections.
- * They can see who they are following, who follows them, and users that 
- * they can discover.
+ * This component is only available to the admin. It allows 
+ * them to make various aggregating queries.
  */
 export default function NetworkPage() {
 	/**
@@ -48,19 +49,11 @@ export default function NetworkPage() {
 					<Typography variant="h6">My Network</Typography>
 					<Box borderBottom={1} borderColor="divider">
 						<Tabs value={tabIndex} onChange={( _, val ) => setTabIndex( val )}>
-							<Tab label="Following" />
-							<Tab label="Followers" />
-							<Tab label="Discover" />
+							<Tab label="Posts" />
 						</Tabs>
 					</Box>
 					<TabPanel value={tabIndex} index={0}>
-						<UsersPanel following />
-					</TabPanel>
-					<TabPanel value={tabIndex} index={1}>
-						<UsersPanel />
-					</TabPanel>
-					<TabPanel value={tabIndex} index={2}>
-						<DiscoverPanel />
+						<PostsPanel />
 					</TabPanel>
 				</Box>
 			</main>
@@ -99,101 +92,34 @@ function TabPanel( props: TabPanelProps ) {
 }
 
 /**
- * Props for the UsersPanel component
- */
-interface UsersPanelProps {
-	following?: boolean
-}
-
-/**
- * UsersPanel Component
+ * PostsPanel Component
  * 
- * This component either shows all the users that the currently logged in user
- * is followed by or is following based on the following? prop.
- */
-function UsersPanel( props: UsersPanelProps ) {
-	/**
-	 * Hooks
-	 */
-	// Uses the currently logged in user
-	const { user } = useUser()
-
-	/**
-	 * State
-	 */
-	// State to hold all the following/follower users
-	const [ users, setUsers ] = React.useState<User[]>( [] )
-	// State to hold whether the query is still loading
-	const [ loading, setLoading ] = React.useState( true )
-
-	/**
-	 * Effects
-	 */
-	// Loads all the following/follower users from the DB and populates the state
-	React.useEffect( () => {
-		const fetchUsers = async () => {
-			const response = await axios( `/api/${props.following ? "following" : "followers"}/${user?.userId || 0}` )
-
-			const newUsers: User[] = response.data.users
-
-			setUsers( newUsers )
-		}
-
-		fetchUsers().then( () => {
-			setLoading( false )
-		} )
-	}, [user?.userId, props.following] )
-
-	/**
-	 * Render
-	 */
-	return (
-		<Stack gap={1}>
-			{loading && (
-				<CircularProgress 
-					sx={{
-						alignSelf: "center",
-					}}
-				/>
-			)}
-			{!loading && users.length === 0 && (
-				<Typography>No users</Typography>
-			)}
-			{!loading && users.map( user => (
-				<UserRow 
-					user={user}
-					key={user.userId}
-				/>
-			) )}
-		</Stack>
-	)
-}
-
-/**
- * DiscoverPanel Component
- * 
- * This component allows the user to discover other users. They
+ * This component allows the admin to see all the Posts for a query. They
  * can filter by SchoolStatus, Major, and Categories that other
  * users are interested it.
  */
-function DiscoverPanel() {
+function PostsPanel() {
+	/**
+	 * Hooks
+	 */
+	// Dispatches an action to the store
+	const dispatch = useAppDispatch()
+
 	/**
 	 * State
 	 */
 	// State that holds the currently select status
 	const [status, setStatus] = React.useState( "" )
-	// State that holds the currently select major
-	const [major, setMajor] = React.useState( "" )
 	// State that holds the currently select category
 	const [category, setCategory] = React.useState( "" )
 	// State that holds the list of all statuses available from the DB
 	const [statuses, setStatuses] = React.useState<string[]>( [] )
-	// State that holds the list of all majors available from the DB
-	const [majors, setMajors] = React.useState<string[]>( [] )
 	// State that holds the list of all categories available from the DB
 	const [categories, setCategories] = React.useState<string[]>( [] )
-	// State that holds the list of Users that match the query
-	const [users, setUsers] = React.useState<User[]>( [] )
+	// State to hold the content the user is searching for
+	const [content, setContent] = React.useState( "" )
+	// State that holds the list of Posts that match the query
+	const [posts, setPosts] = React.useState<Post[]>( [] )
 	// State that holds the query is loading or not
 	const [loading, setLoading] = React.useState( true )
 	// State that holds the pagination page the user has selected
@@ -207,8 +133,8 @@ function DiscoverPanel() {
 	// Clears all the filters
 	const handleClearFilters = React.useCallback( () => {
 		setStatus( "" )
-		setMajor( "" )
 		setCategory( "" )
+		setContent( "" )
 	}, [] )
 
 	// Initial render - fetches all the filters from the DB
@@ -217,7 +143,6 @@ function DiscoverPanel() {
 			const response = await axios( "/api/filters" )
 
 			setStatuses( response.data.statuses )
-			setMajors( response.data.majors )
 			setCategories( response.data.categories )
 		}
 
@@ -226,28 +151,36 @@ function DiscoverPanel() {
 
 	// Whenever one of the filters changes, queries the DB for users that match
 	React.useEffect( () => {
-		const fetchUsers = async () => {
-			const response = await axios.post( "/api/filters/users", {
+		const fetchPosts = async () => {
+			const response = await axios.post( "/api/filters/posts", {
 				status,
-				major,
 				category,
+				content,
 				page
 			} )
 
-			setUsers( response.data.users )
+			const newPosts: Post[] = response.data.posts.map( ( post: Post ) => ( {
+				...post,
+				createdOn: new Date( post.createdOn ),
+				updatedOn: new Date( post.updatedOn )
+			} ) )
+			const newUsers: User[] = response.data.users
+
+			dispatch( usersActions.updateUsers( newUsers ) )
+			setPosts( newPosts )
 			setPageCount( response.data.pageCount )
 		}
 
 		setLoading( true )
 		setTimeout( () => {
-			fetchUsers().then( () => setLoading( false ) )
+			fetchPosts().then( () => setLoading( false ) )
 		}, 1000 )
-	}, [status, major, category, page] )
+	}, [status, category, page, content, dispatch] )
 
 	// When the filters changes, show the first page of results
 	React.useEffect( () => {
 		setPage( 1 )
-	}, [status, major, category] )
+	}, [status, category] )
 
 	/**
 	 * Render
@@ -270,19 +203,6 @@ function DiscoverPanel() {
 						onChange={e => setStatus( e.target.value )}
 					>
 						{statuses.map( item => (
-							<MenuItem value={item} key={item}>{item}</MenuItem>
-						) )}
-					</Select>
-				</FormControl>
-				<FormControl sx={{ minWidth: 200 }}>
-					<InputLabel id="major-select">Major</InputLabel>
-					<Select 
-						labelId="major-select"
-						label="Major"
-						value={major}
-						onChange={e => setMajor( e.target.value )}
-					>
-						{majors.map( item => (
 							<MenuItem value={item} key={item}>{item}</MenuItem>
 						) )}
 					</Select>
@@ -312,13 +232,13 @@ function DiscoverPanel() {
 						}}
 					/>
 				)}
-				{!loading && users.length === 0 && (
-					<Typography>No users</Typography>
+				{!loading && posts.length === 0 && (
+					<Typography>No posts</Typography>
 				)}
-				{!loading && users.map( user => (
-					<UserRow 
-						user={user}
-						key={user.userId}
+				{!loading && posts.map( post => (
+					<PostCard 
+						key={post.postId}
+						post={post}
 					/>
 				) )}
 			</Stack>

@@ -12,7 +12,7 @@ import * as React from "react"
 interface PostCardProps {
 	post: Post
 	editable?: boolean
-	handleDeleteClicked: () => void
+	handleDeleteClicked?: () => void
 }
 
 /**
@@ -117,7 +117,7 @@ interface HeaderProps {
 	editable?: boolean
 	editing?: boolean
 	handleEditClicked: () => void
-	handleDeleteClicked: () => void
+	handleDeleteClicked?: () => void
 }
 
 /**
