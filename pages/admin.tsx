@@ -3,10 +3,32 @@ import { useAppDispatch } from "@/hooks"
 import { usersActions } from "@/slices/usersSlice"
 import { Post } from "@/types/postType"
 import { User } from "@/types/userType"
-import { Box, Button, CircularProgress, Container, Divider, FormControl, InputLabel, MenuItem, Pagination, Select, Stack, Tab, Tabs, Typography } from "@mui/material"
+import { Box, Button, CircularProgress, Container, Divider, FormControl, Grid, InputLabel, MenuItem, Pagination, Select, Stack, Typography } from "@mui/material"
 import axios from "axios"
 import Head from "next/head"
 import * as React from "react"
+import { Bar } from "react-chartjs-2"
+import {
+	Chart as ChartJS,
+	CategoryScale,
+	LinearScale,
+	BarElement,
+	Title,
+	Tooltip,
+	Legend,
+	Colors
+} from "chart.js"
+
+// Register ChartJS plugins
+ChartJS.register(
+	CategoryScale,
+	LinearScale,
+	BarElement,
+	Title,
+	Tooltip,
+	Legend,
+	Colors
+)
 
 /**
  * AdminPage Component
@@ -18,8 +40,6 @@ export default function NetworkPage() {
 	/**
 	 * State
 	 */
-	// State to holder which tab should be displayed
-	const [ tabIndex, setTabIndex ] = React.useState( 0 )
 
 	/**
 	 * Render
@@ -37,57 +57,37 @@ export default function NetworkPage() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<main>
-				<Box
-					sx={{
-						backgroundColor: "white",
-						borderRadius: 3,
-						padding: 2,
-					}}
-					border="1px solid"
-					borderColor="divider"
-				>
-					<Typography variant="h6">My Network</Typography>
-					<Box borderBottom={1} borderColor="divider">
-						<Tabs value={tabIndex} onChange={( _, val ) => setTabIndex( val )}>
-							<Tab label="Posts" />
-						</Tabs>
-					</Box>
-					<TabPanel value={tabIndex} index={0}>
-						<PostsPanel />
-					</TabPanel>
-				</Box>
+				<Grid container columnSpacing={2}>
+					<Grid item xs={7}>
+						<Box
+							sx={{
+								backgroundColor: "white",
+								borderRadius: 3,
+								padding: 2,
+							}}
+							border="1px solid"
+							borderColor="divider"
+						>
+							<Typography variant="h6">Posts</Typography>
+							<PostsPanel />
+						</Box>
+					</Grid>
+					<Grid item xs={5}>
+						<Box
+							sx={{
+								backgroundColor: "white",
+								borderRadius: 3,
+								padding: 2
+							}}
+							border="1px solid"
+							borderColor="divider"
+						>
+							<Chart />
+						</Box>
+					</Grid>
+				</Grid>
 			</main>
 		</Container>
-	)
-}
-
-/**
- * Props for the TabPanel component
- */
-interface TabPanelProps {
-	children?: React.ReactNode
-	index: number
-	value: number
-}
-
-/**
- * TabPanel Component
- * 
- * This component renders children that should be shown
- * in the currently select tab.
- */
-function TabPanel( props: TabPanelProps ) {
-	return (
-		<div
-			role="tabpanel"
-			hidden={props.value !== props.index}
-		>
-			{props.value === props.index && (
-				<Box p={1} pb={0}>
-					{props.children}
-				</Box>
-			)}
-		</div>
 	)
 }
 
@@ -243,5 +243,69 @@ function PostsPanel() {
 				) )}
 			</Stack>
 		</Stack>
+	)
+}
+
+/**
+ * Chart Component
+ * 
+ * This component renders a chart showing the top
+ * three categories for posts in the DB
+ */
+function Chart() {
+	/**
+	 * State
+	 */
+	// State to hold the labels for the chart
+	const [labels, setLabels] = React.useState<string[]>( [] )
+	// State to hold the datapoints
+	const [data, setData] = React.useState<number[]>( [] )
+
+	/**
+	 * Effects
+	 */
+	// Initial render - queries the database for the top 3 categories
+	React.useEffect( () => {
+		const fetchData = async () => {
+			const response = await axios( "/api/categories/trending" )
+
+			setLabels( response.data.labels )
+			setData( response.data.data )
+		}
+
+		fetchData()
+	}, [] )
+
+	/**
+	 * Render
+	 */
+	return (
+		<Bar 
+			height={500}
+			options={{
+				plugins: {
+					colors: {
+						enabled: true,
+					},
+					legend: {
+						display: false
+					},
+					title: {
+						display: true,
+						text: "Top 3 Post Categories"
+					}
+				}
+			}} 
+			data={{
+				labels,
+				datasets: [{
+					data,
+					backgroundColor: [
+						"#ff6384",
+						"#36a2eb",
+						"#cc65fe",
+					]
+				}]
+			}}/>
 	)
 }
