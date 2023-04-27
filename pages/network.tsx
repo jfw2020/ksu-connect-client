@@ -6,9 +6,23 @@ import axios from "axios"
 import Head from "next/head"
 import * as React from "react"
 
-export default function Network() {
+/**
+ * NetworkPage Component
+ * 
+ * This component is the page that shows the user all of their connections.
+ * They can see who they are following, who follows them, and users that 
+ * they can discover.
+ */
+export default function NetworkPage() {
+	/**
+	 * State
+	 */
+	// State to holder which tab should be displayed
 	const [ tabIndex, setTabIndex ] = React.useState( 0 )
 
+	/**
+	 * Render
+	 */
 	return (
 		<Container
 			sx={{
@@ -54,12 +68,21 @@ export default function Network() {
 	)
 }
 
+/**
+ * Props for the TabPanel component
+ */
 interface TabPanelProps {
 	children?: React.ReactNode
 	index: number
 	value: number
 }
 
+/**
+ * TabPanel Component
+ * 
+ * This component renders children that should be shown
+ * in the currently select tab.
+ */
 function TabPanel( props: TabPanelProps ) {
 	return (
 		<div
@@ -75,16 +98,38 @@ function TabPanel( props: TabPanelProps ) {
 	)
 }
 
+/**
+ * Props for the UsersPanel component
+ */
 interface UsersPanelProps {
 	following?: boolean
 }
 
+/**
+ * UsersPanel Component
+ * 
+ * This component either shows all the users that the currently logged in user
+ * is followed by or is following based on the following? prop.
+ */
 function UsersPanel( props: UsersPanelProps ) {
+	/**
+	 * Hooks
+	 */
+	// Uses the currently logged in user
 	const { user } = useUser()
 
+	/**
+	 * State
+	 */
+	// State to hold all the following/follower users
 	const [ users, setUsers ] = React.useState<User[]>( [] )
+	// State to hold whether the query is still loading
 	const [ loading, setLoading ] = React.useState( true )
 
+	/**
+	 * Effects
+	 */
+	// Loads all the following/follower users from the DB and populates the state
 	React.useEffect( () => {
 		const fetchUsers = async () => {
 			const response = await axios( `/api/${props.following ? "following" : "followers"}/${user?.userId || 0}` )
@@ -99,6 +144,9 @@ function UsersPanel( props: UsersPanelProps ) {
 		} )
 	}, [user?.userId, props.following] )
 
+	/**
+	 * Render
+	 */
 	return (
 		<Stack gap={1}>
 			{loading && (
@@ -121,24 +169,49 @@ function UsersPanel( props: UsersPanelProps ) {
 	)
 }
 
+/**
+ * DiscoverPanel Component
+ * 
+ * This component allows the user to discover other users. They
+ * can filter by SchoolStatus, Major, and Categories that other
+ * users are interested it.
+ */
 function DiscoverPanel() {
+	/**
+	 * State
+	 */
+	// State that holds the currently select status
 	const [status, setStatus] = React.useState( "" )
+	// State that holds the currently select major
 	const [major, setMajor] = React.useState( "" )
+	// State that holds the currently select category
 	const [category, setCategory] = React.useState( "" )
+	// State that holds the list of all statuses available from the DB
 	const [statuses, setStatuses] = React.useState<string[]>( [] )
+	// State that holds the list of all majors available from the DB
 	const [majors, setMajors] = React.useState<string[]>( [] )
+	// State that holds the list of all categories available from the DB
 	const [categories, setCategories] = React.useState<string[]>( [] )
+	// State that holds the list of Users that match the query
 	const [users, setUsers] = React.useState<User[]>( [] )
+	// State that holds the query is loading or not
 	const [loading, setLoading] = React.useState( true )
+	// State that holds the pagination page the user has selected
 	const [page, setPage] = React.useState( 1 )
+	// State that holds the number of pages in the search query
 	const [pageCount, setPageCount] = React.useState( 0 )
 
+	/**
+	 * Callbacks
+	 */
+	// Clears all the filters
 	const handleClearFilters = React.useCallback( () => {
 		setStatus( "" )
 		setMajor( "" )
 		setCategory( "" )
 	}, [] )
 
+	// Initial render - fetches all the filters from the DB
 	React.useEffect( () => {
 		const fetchFilters = async () => {
 			const response = await axios( "/api/filters" )
@@ -151,6 +224,7 @@ function DiscoverPanel() {
 		fetchFilters()
 	}, [] )
 
+	// Whenever one of the filters changes, queries the DB for users that match
 	React.useEffect( () => {
 		const fetchUsers = async () => {
 			const response = await axios.post( "/api/filters", {
@@ -170,10 +244,14 @@ function DiscoverPanel() {
 		}, 1000 )
 	}, [status, major, category, page] )
 
+	// When the filters changes, show the first page of results
 	React.useEffect( () => {
 		setPage( 1 )
 	}, [status, major, category] )
 
+	/**
+	 * Render
+	 */
 	return (
 		<Stack gap={1}>
 			<Stack

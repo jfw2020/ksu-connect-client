@@ -8,6 +8,7 @@ import Head from "next/head"
 import { useRouter } from "next/router"
 import * as React from "react"
 
+// Gets props before the page is rendered - if the user is logged in, it sends them to feed. Otherwise, they must log in.
 export const getServerSideProps = withIronSessionSsr( async function( {
 	req,
 } ) {
@@ -27,11 +28,19 @@ export const getServerSideProps = withIronSessionSsr( async function( {
 	}
 }, sessionOptions )
 
-export default function Home() {
+/**
+ * HomePage Component
+ * 
+ * This component is the page the user sees when accessing the website for the 
+ * first time. Once they login, they are redirected to their feed.
+ */
+export default function HomePage() {
 	/**
 	 * Hooks
 	 */
+	// Uses the currently logged in user
 	const { mutateUser } = useUser()
+	// Router for redirecting the user
 	const router = useRouter()
 
 	/**
@@ -47,6 +56,7 @@ export default function Home() {
 	/**
 	 * Callbacks
 	 */
+	// Tries loggin the user into the system
 	const handleLogin = React.useCallback( async () => {
 		try {
 			const response = await axios.post( "/api/login", {
@@ -62,6 +72,9 @@ export default function Home() {
 		}
 	}, [username, password, mutateUser, router] )
 
+	/**
+	 * Render
+	 */
 	return (
 		<Container
 			sx={{

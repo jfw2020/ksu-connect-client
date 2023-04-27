@@ -15,12 +15,16 @@ import { sessionOptions } from "../lib/session"
 import { getNumFollowers } from "./api/followers/[userId]"
 import { getNumPosts } from "./api/posts/user/[userId]"
 
+/**
+ * Props for the FeedPage component
+ */
 interface FeedPageProps {
 	user: User
 	numFollowers: number
 	numPosts: number
 }
 
+// Gets props before the page is rendered to ensure there are no nulls
 export const getServerSideProps = withIronSessionSsr( async function( {
 	req,
 } ) {
@@ -47,10 +51,18 @@ export const getServerSideProps = withIronSessionSsr( async function( {
 	}
 }, sessionOptions )
 
+/**
+ * FeedPage Component
+ * 
+ * This component is what the user sees first after they log in. Here, they can see their
+ * at-a-glance profile, as well as their feed and all their recommended users. They can interact 
+ * with their own feed (update and delete posts), as well as create new posts.
+ */
 export default function FeedPage( props: FeedPageProps ) {
 	/**
 	 * Hooks
 	 */
+	// Dispatches an action to the store
 	const dispatch = useAppDispatch()
 
 	/**
@@ -66,6 +78,7 @@ export default function FeedPage( props: FeedPageProps ) {
 	/**
 	 * Callbacks
 	 */
+	// Creates a new post in the DB and updates the current state to reflect the new post
 	const handleCreatePost = React.useCallback( async ( content: string, categories: string[] ) => {
 		const response = await axios.post( "/api/posts", {
 			content,
@@ -84,6 +97,7 @@ export default function FeedPage( props: FeedPageProps ) {
 		}
 	}, [] )
 
+	// Deletes a post from the DB
 	const handleDeletePost = React.useCallback( async ( postId: number ) => {
 		await axios.delete( `/api/posts/${postId}` )
 
@@ -114,6 +128,9 @@ export default function FeedPage( props: FeedPageProps ) {
 		} )
 	}, [ dispatch ] )
 
+	/**
+	 * Render
+	 */
 	return (
 		<Container
 			sx={{

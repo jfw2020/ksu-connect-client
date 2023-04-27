@@ -16,12 +16,16 @@ import { withIronSessionSsr } from "iron-session/next"
 import { sessionOptions } from "@/lib/session"
 import { getFollowerIds } from "../api/followers/[userId]"
 
+/**
+ * Props for the UserPage component
+ */
 interface UserPageProps {
 	user: User
 	followingIds: number[]
 	followerIds: number[]
 }
 
+// Gets props before the page is rendered to ensure there are no nulls
 export const getServerSideProps = withIronSessionSsr( async function( { req, query } ) {
 	const currentUserId = req.session.user?.userId.toString() || "0"
 	const userId = query.userId as string
@@ -48,11 +52,19 @@ export const getServerSideProps = withIronSessionSsr( async function( { req, que
 	}
 }, sessionOptions )
 
+/**
+ * UserPage Component
+ * 
+ * This component shows a User's information to the user. This includes all
+ * of their posts and the User's that they are recommended to follow.
+ */
 export default function UserPage( props: UserPageProps ) {
 	/**
 	 * Hooks
 	 */
+	// Dispatches an action to the store
 	const dispatch = useAppDispatch()
+	// Uses the currently logged in user
 	const { user } = useUser()
 
 	/**
@@ -88,6 +100,7 @@ export default function UserPage( props: UserPageProps ) {
 		}
 	}, [followingIds, props.user.userId, user?.userId] )
 
+	// Deletes a post from the DB
 	const handleDeletePost = React.useCallback( async ( postId: number ) => {
 		await axios.delete( `/api/posts/${postId}` )
 
@@ -118,6 +131,7 @@ export default function UserPage( props: UserPageProps ) {
 		} )
 	}, [dispatch, props.user.userId] )
 
+	// Whenever props.followerIds changes, we need to update the followerIds state
 	React.useEffect( () => {
 		setFollowerIds( props.followerIds )
 	}, [props.followerIds] )
@@ -125,6 +139,7 @@ export default function UserPage( props: UserPageProps ) {
 	/**
 	 * Render Variables
 	 */
+	// Title of the webpage
 	const title = `KSUConnect | ${props.user.firstName} ${props.user.lastName}`
 
 	/**
@@ -208,15 +223,32 @@ export default function UserPage( props: UserPageProps ) {
 	)
 }
 
+/**
+ * Props for the FollowButton component
+ */
 interface FollowButtonProps {
 	following?: boolean
 	onClick: () => void
 }
 
+/**
+ * FollowButton Component
+ * 
+ * Displays either Follow or Unfollow depending on if the user is following
+ * this user
+ */
 function FollowButton( props: FollowButtonProps ) {
+	/**
+	 * Render Variables
+	 */
+	// Whether the button appears filled in or outlined
 	const variant = props.following ? "outlined" : "contained"
+	// Whether the button says Follow or Unfollow
 	const text = props.following ? "Unfollow" : "Follow"
 
+	/**
+	 * Render
+	 */
 	return (
 		<Button onClick={props.onClick} variant={variant}>{text}</Button>
 	)
