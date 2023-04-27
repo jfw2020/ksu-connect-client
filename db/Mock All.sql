@@ -1058,7 +1058,7 @@ insert into KSUConnect.PostCategories (PostId, CategoryId) values
     (366, 27),
     (14, 28),
     (314, 22),
-    (504, 9),
+    (503, 9),
     (211, 9),
     (174, 9),
     (6, 27),
