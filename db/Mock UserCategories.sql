@@ -1,500 +1,501 @@
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (78, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (21, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (28, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (55, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (34, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (5, 1);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (66, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (38, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (46, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (37, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (44, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (68, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (28, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (78, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (62, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (22, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (10, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (78, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (38, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (37, 27);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (52, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (14, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (37, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (33, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (44, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (35, 32);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (36, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (70, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (75, 24);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (79, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (33, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (20, 32);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (88, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (19, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (74, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (19, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (37, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (9, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (64, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (87, 1);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (76, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (39, 32);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (29, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (26, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (80, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (58, 7);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (81, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (17, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (89, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (57, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (93, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (22, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (12, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (92, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (94, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (74, 24);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (100, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (41, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (60, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (27, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (82, 7);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (47, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (14, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (39, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (87, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (70, 24);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (79, 14);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (44, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (43, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (60, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (27, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (83, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (82, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (94, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (87, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (76, 1);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (36, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (33, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (43, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (68, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (17, 1);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (68, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (16, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (14, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (92, 31);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (66, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (94, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (30, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (80, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (104, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (52, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (15, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (17, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (56, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (79, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (25, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (44, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (39, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (17, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (65, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (47, 32);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (5, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (77, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (94, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (38, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (58, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (40, 32);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (9, 31);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (46, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (20, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (19, 27);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (41, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (61, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (62, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (45, 15);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (50, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (66, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (30, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (35, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (31, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (94, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (18, 15);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (94, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (41, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (51, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (62, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (39, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (103, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 32);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (5, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (40, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (78, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (21, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (35, 35);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (36, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (45, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (29, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (54, 35);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (16, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (20, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (64, 24);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (36, 35);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (5, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (73, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (77, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (103, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (21, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (13, 31);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (6, 27);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (22, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (33, 32);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (37, 15);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (100, 24);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (70, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (83, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (60, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (41, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (14, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (101, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (61, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (103, 15);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (97, 27);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (97, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (15, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (7, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (41, 1);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (80, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (32, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (56, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (87, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (82, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (68, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (24, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (75, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (30, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (19, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (5, 32);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (60, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (69, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (5, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (78, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (27, 1);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (34, 24);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (101, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (85, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (7, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (79, 31);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (64, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (66, 15);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (43, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (70, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (71, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (16, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (12, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (91, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (77, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (79, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (19, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (5, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (52, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (85, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (13, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (75, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (72, 1);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (58, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (14, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (45, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (62, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (49, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (104, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (33, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (6, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (25, 31);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (35, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (38, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (28, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (81, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (53, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (87, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (101, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (85, 24);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (103, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (17, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (66, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (16, 24);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (81, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (37, 35);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (36, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (49, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (22, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (81, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (63, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (34, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (61, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (69, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (69, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (36, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (85, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (13, 7);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (96, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (69, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (72, 35);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (36, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (101, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (60, 35);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (59, 31);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (82, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (7, 14);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (47, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (20, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (37, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (96, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (20, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (80, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (92, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (64, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (74, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (50, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (54, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (9, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (70, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (31, 15);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (65, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (19, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (90, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (56, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (25, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (61, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (68, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (17, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (100, 1);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (39, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (72, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (104, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (6, 35);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (92, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (72, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (28, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (88, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (56, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (13, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (40, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (87, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (42, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (94, 24);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (90, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (37, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (35, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (72, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (33, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (46, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (97, 24);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (69, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (51, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (37, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (49, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (45, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (39, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (99, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (84, 27);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (38, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (71, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (22, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (39, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (78, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (30, 27);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (69, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (33, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (21, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (27, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (22, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (43, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (46, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (84, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (86, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (5, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (80, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (69, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (41, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (96, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (104, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (92, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (44, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (95, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (17, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (10, 14);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (62, 27);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (98, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (99, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (63, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (30, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (81, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (89, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (32, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (6, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (98, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (90, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (25, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (37, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (35, 15);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (15, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (46, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (37, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (23, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (36, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (33, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (64, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (9, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (59, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (79, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (39, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (95, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (62, 24);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (97, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (81, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (75, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (6, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (38, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (34, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (63, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (83, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (57, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (76, 27);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (26, 7);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (32, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (55, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (93, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (42, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (83, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (90, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (52, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (55, 22);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (39, 31);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (20, 31);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (52, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (12, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (62, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (53, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (67, 31);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (101, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (64, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (88, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (71, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (50, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (62, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (35, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (15, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (26, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (43, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (52, 31);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (19, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (91, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (104, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (91, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (69, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (33, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (7, 14);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (7, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (40, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (99, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (32, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (9, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (88, 3);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (8, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (21, 7);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (22, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (103, 7);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (16, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (85, 35);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (21, 5);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (96, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (101, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (40, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (29, 14);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (22, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (45, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (57, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (41, 35);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (72, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (85, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (64, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (33, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (35, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (59, 15);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (24, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (83, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (35, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (88, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (41, 32);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (16, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (69, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (67, 14);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (74, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (82, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (23, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (42, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (20, 6);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (48, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (27, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (33, 33);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (24, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (70, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (32, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (84, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (48, 19);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (102, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (93, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (101, 14);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (79, 35);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (41, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (56, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (54, 10);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (101, 12);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (73, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (17, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (25, 34);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (82, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (67, 26);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (99, 20);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (99, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (84, 31);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (20, 23);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (47, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (10, 29);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (27, 30);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (36, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (65, 25);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (16, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (36, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (95, 28);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (26, 17);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (39, 4);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (35, 13);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (80, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (42, 21);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (26, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (67, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (46, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (10, 15);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (22, 11);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (97, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (81, 18);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (61, 1);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (48, 8);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (101, 9);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (88, 15);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (11, 16);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (8, 2);
-insert into KSUConnect.UserCategories (UserId, CategoryId) values (92, 26);
+insert into KSUConnect.UserCategories (UserId, CategoryId) values 
+    (78, 2),
+    (102, 20),
+    (21, 23),
+    (28, 21),
+    (55, 5),
+    (34, 9),
+    (102, 26),
+    (5, 1),
+    (66, 34),
+    (38, 29),
+    (46, 4),
+    (37, 8),
+    (44, 12),
+    (68, 18),
+    (28, 33),
+    (78, 25),
+    (62, 23),
+    (22, 21),
+    (10, 11),
+    (78, 9),
+    (38, 17),
+    (37, 27),
+    (52, 12),
+    (14, 13),
+    (37, 23),
+    (33, 3),
+    (44, 11),
+    (102, 25),
+    (35, 32),
+    (36, 22),
+    (70, 16),
+    (75, 24),
+    (79, 19),
+    (33, 18),
+    (20, 32),
+    (88, 16),
+    (19, 5),
+    (74, 5),
+    (19, 28),
+    (37, 20),
+    (9, 28),
+    (64, 16),
+    (87, 1),
+    (76, 8),
+    (39, 32),
+    (29, 3),
+    (26, 28),
+    (80, 3),
+    (58, 7),
+    (81, 28),
+    (17, 10),
+    (89, 25),
+    (57, 23),
+    (93, 26),
+    (22, 26),
+    (12, 5),
+    (92, 2),
+    (94, 13),
+    (74, 24),
+    (100, 13),
+    (102, 17),
+    (41, 34),
+    (60, 30),
+    (27, 13),
+    (102, 17),
+    (82, 7),
+    (47, 16),
+    (14, 23),
+    (39, 13),
+    (87, 11),
+    (70, 24),
+    (79, 14),
+    (44, 22),
+    (43, 29),
+    (60, 19),
+    (27, 3),
+    (83, 26),
+    (82, 25),
+    (94, 33),
+    (87, 22),
+    (76, 1),
+    (36, 9),
+    (33, 10),
+    (43, 25),
+    (68, 18),
+    (17, 1),
+    (68, 12),
+    (16, 33),
+    (14, 9),
+    (92, 31),
+    (66, 9),
+    (94, 26),
+    (30, 19),
+    (80, 8),
+    (104, 22),
+    (52, 17),
+    (15, 4),
+    (17, 11),
+    (56, 3),
+    (79, 12),
+    (25, 13),
+    (44, 21),
+    (39, 25),
+    (17, 26),
+    (65, 34),
+    (47, 32),
+    (5, 28),
+    (77, 9),
+    (94, 17),
+    (38, 29),
+    (58, 29),
+    (40, 32),
+    (9, 31),
+    (46, 21),
+    (20, 30),
+    (19, 27),
+    (41, 5),
+    (61, 11),
+    (62, 22),
+    (45, 15),
+    (50, 10),
+    (66, 17),
+    (30, 30),
+    (35, 6),
+    (31, 12),
+    (94, 22),
+    (18, 15),
+    (94, 16),
+    (41, 17),
+    (51, 26),
+    (62, 29),
+    (39, 20),
+    (103, 10),
+    (102, 32),
+    (5, 22),
+    (40, 6),
+    (78, 21),
+    (21, 34),
+    (35, 35),
+    (36, 16),
+    (45, 2),
+    (29, 34),
+    (54, 35),
+    (16, 9),
+    (20, 25),
+    (64, 24),
+    (36, 35),
+    (5, 13),
+    (73, 2),
+    (77, 3),
+    (103, 34),
+    (21, 13),
+    (13, 31),
+    (6, 27),
+    (22, 12),
+    (33, 32),
+    (37, 15),
+    (100, 24),
+    (70, 30),
+    (83, 16),
+    (60, 16),
+    (41, 10),
+    (14, 34),
+    (101, 33),
+    (61, 25),
+    (103, 15),
+    (97, 27),
+    (97, 17),
+    (15, 21),
+    (7, 34),
+    (41, 1),
+    (80, 3),
+    (32, 16),
+    (56, 23),
+    (87, 9),
+    (82, 20),
+    (68, 18),
+    (24, 8),
+    (75, 6),
+    (30, 21),
+    (19, 17),
+    (5, 32),
+    (60, 33),
+    (69, 28),
+    (5, 6),
+    (78, 16),
+    (102, 19),
+    (27, 1),
+    (34, 24),
+    (101, 12),
+    (85, 25),
+    (7, 34),
+    (79, 31),
+    (64, 25),
+    (102, 11),
+    (66, 15),
+    (43, 21),
+    (70, 2),
+    (71, 4),
+    (16, 21),
+    (12, 11),
+    (91, 23),
+    (77, 23),
+    (102, 9),
+    (79, 26),
+    (19, 22),
+    (5, 26),
+    (52, 18),
+    (85, 13),
+    (13, 22),
+    (75, 6),
+    (72, 1),
+    (58, 19),
+    (14, 4),
+    (45, 9),
+    (62, 30),
+    (49, 9),
+    (104, 5),
+    (33, 26),
+    (6, 30),
+    (25, 31),
+    (35, 4),
+    (38, 4),
+    (28, 21),
+    (81, 3),
+    (53, 25),
+    (87, 2),
+    (101, 30),
+    (85, 24),
+    (103, 22),
+    (17, 33),
+    (66, 6),
+    (16, 24),
+    (81, 30),
+    (37, 35),
+    (36, 19),
+    (49, 19),
+    (22, 21),
+    (81, 16),
+    (63, 17),
+    (34, 11),
+    (61, 26),
+    (69, 17),
+    (69, 18),
+    (36, 10),
+    (85, 10),
+    (13, 7),
+    (96, 2),
+    (69, 20),
+    (72, 35),
+    (36, 25),
+    (101, 23),
+    (60, 35),
+    (102, 22),
+    (59, 31),
+    (82, 8),
+    (7, 14),
+    (47, 11),
+    (20, 28),
+    (37, 6),
+    (96, 4),
+    (20, 16),
+    (80, 2),
+    (92, 2),
+    (64, 22),
+    (74, 26),
+    (50, 9),
+    (54, 17),
+    (9, 2),
+    (70, 17),
+    (31, 15),
+    (65, 22),
+    (19, 6),
+    (90, 16),
+    (56, 2),
+    (25, 13),
+    (61, 4),
+    (68, 22),
+    (17, 30),
+    (100, 1),
+    (39, 13),
+    (72, 5),
+    (104, 25),
+    (6, 35),
+    (92, 17),
+    (72, 11),
+    (28, 2),
+    (88, 11),
+    (56, 5),
+    (13, 18),
+    (40, 29),
+    (87, 22),
+    (42, 8),
+    (94, 24),
+    (90, 8),
+    (37, 9),
+    (35, 6),
+    (72, 6),
+    (33, 19),
+    (46, 20),
+    (97, 24),
+    (69, 29),
+    (51, 11),
+    (37, 8),
+    (49, 25),
+    (45, 13),
+    (39, 3),
+    (99, 20),
+    (84, 27),
+    (38, 18),
+    (71, 8),
+    (22, 21),
+    (39, 20),
+    (78, 12),
+    (30, 27),
+    (69, 9),
+    (33, 23),
+    (21, 11),
+    (27, 5),
+    (22, 19),
+    (43, 20),
+    (46, 22),
+    (84, 22),
+    (86, 21),
+    (5, 25),
+    (80, 13),
+    (69, 11),
+    (102, 6),
+    (41, 4),
+    (96, 17),
+    (104, 21),
+    (92, 11),
+    (44, 10),
+    (95, 4),
+    (17, 5),
+    (10, 14),
+    (62, 27),
+    (98, 9),
+    (99, 2),
+    (63, 26),
+    (30, 28),
+    (81, 19),
+    (89, 3),
+    (32, 34),
+    (6, 29),
+    (98, 18),
+    (90, 2),
+    (25, 3),
+    (37, 21),
+    (35, 15),
+    (15, 8),
+    (46, 12),
+    (37, 9),
+    (23, 21),
+    (36, 28),
+    (33, 20),
+    (64, 28),
+    (9, 33),
+    (59, 9),
+    (79, 22),
+    (39, 28),
+    (95, 20),
+    (62, 24),
+    (97, 12),
+    (81, 23),
+    (75, 33),
+    (6, 6),
+    (38, 29),
+    (34, 29),
+    (63, 17),
+    (83, 22),
+    (57, 28),
+    (76, 27),
+    (102, 10),
+    (26, 7),
+    (32, 33),
+    (55, 19),
+    (93, 23),
+    (42, 34),
+    (83, 19),
+    (90, 28),
+    (52, 23),
+    (55, 22),
+    (39, 31),
+    (20, 31),
+    (52, 34),
+    (12, 13),
+    (62, 19),
+    (53, 8),
+    (67, 31),
+    (101, 26),
+    (64, 16),
+    (88, 17),
+    (71, 18),
+    (50, 5),
+    (62, 23),
+    (35, 2),
+    (15, 25),
+    (26, 33),
+    (43, 21),
+    (52, 31),
+    (19, 12),
+    (91, 12),
+    (104, 13),
+    (91, 2),
+    (69, 18),
+    (33, 23),
+    (7, 14),
+    (7, 4),
+    (40, 21),
+    (99, 33),
+    (32, 18),
+    (9, 17),
+    (88, 3),
+    (8, 9),
+    (21, 7),
+    (22, 17),
+    (103, 7),
+    (16, 10),
+    (85, 35),
+    (21, 5),
+    (96, 30),
+    (101, 18),
+    (40, 26),
+    (29, 14),
+    (22, 17),
+    (45, 16),
+    (57, 16),
+    (41, 35),
+    (72, 20),
+    (85, 10),
+    (64, 10),
+    (33, 9),
+    (35, 16),
+    (59, 15),
+    (24, 26),
+    (83, 21),
+    (35, 16),
+    (88, 33),
+    (41, 32),
+    (16, 10),
+    (69, 26),
+    (67, 14),
+    (74, 29),
+    (82, 6),
+    (23, 18),
+    (42, 29),
+    (20, 6),
+    (48, 19),
+    (27, 16),
+    (33, 33),
+    (24, 4),
+    (70, 4),
+    (32, 29),
+    (84, 25),
+    (48, 19),
+    (102, 20),
+    (93, 29),
+    (101, 14),
+    (79, 35),
+    (41, 8),
+    (56, 28),
+    (54, 10),
+    (101, 12),
+    (73, 13),
+    (17, 30),
+    (25, 34),
+    (82, 11),
+    (67, 26),
+    (99, 20),
+    (99, 8),
+    (84, 31),
+    (20, 23),
+    (47, 30),
+    (10, 29),
+    (27, 30),
+    (36, 13),
+    (65, 25),
+    (16, 13),
+    (36, 17),
+    (95, 28),
+    (26, 17),
+    (39, 4),
+    (35, 13),
+    (80, 9),
+    (42, 21),
+    (26, 8),
+    (67, 8),
+    (46, 2),
+    (10, 15),
+    (22, 11),
+    (97, 2),
+    (81, 18),
+    (61, 1),
+    (48, 8),
+    (101, 9),
+    (88, 15),
+    (11, 16),
+    (8, 2),
+    (92, 26);
