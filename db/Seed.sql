@@ -23,7 +23,19 @@ VALUES
     (N'Mechanical Engineering'),
     (N'Secondary Education'),
     (N'Agriculture Economics'),
-    (N'Finance')
+    (N'Finance'),
+    (N'Accounting'),
+    (N'Architecture'),
+    (N'Art'),
+    (N'Bakery Science'),
+    (N'Chemistry'),
+    (N'Criminology'),
+    (N'Philosophy'),
+    (N'Psychology'),
+    (N'Sociology'),
+    (N'Theatre'),
+    (N'Nuclear Engineering'),
+    (N'Biology')
 
 INSERT KSUConnect.Categories([Name], MajorId)
 SELECT M.[Name], M.MajorID
@@ -36,7 +48,16 @@ VALUES
     (N'Football'),
     (N'Greek Life'),
     (N'Networking'),
-    (N'Engineering')
+    (N'Engineering'),
+    (N'Campus News'),
+    (N'Music'),
+    (N'Theatre'),
+    (N'KSU Band'),
+    (N'Student Clubs'),
+    (N'Student Government'),
+    (N'Awards & Accolades'),
+    (N'Alumni'),
+    (N'Diversity & Inclusion')
 -- Static DO NOT ADD
 
 INSERT KSUConnect.Users(Username, PasswordHash, FirstName, LastName, ImageUrl, SchoolStatusId)
