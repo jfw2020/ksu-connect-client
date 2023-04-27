@@ -1,8 +1,9 @@
+// Fetches JSON for SWR
 export default async function fetchJson( input: RequestInfo | URL, init: RequestInit | undefined ) {
 	const response = await fetch( input, init )
 
-	// if the server replies, there's always some data in json
-	// if there's a network error, it will throw at the previous line
+	// If the server replies, there's always some data in json
+	// If there's a network error, it will throw at the previous line
 	const data = await response.json()
 
 	// response.ok is true when res.status is 2xx
@@ -18,6 +19,7 @@ export default async function fetchJson( input: RequestInfo | URL, init: Request
 	} )
 }
 
+// Class for throwing a custom error
 export class FetchError extends Error {
 	response
 	data
