@@ -44,6 +44,7 @@ VALUES
     (N'jfw2020', N'password', N'Jacob', N'Williams', N'https://pbs.twimg.com/media/FjU2lkcWYAgNG6d.jpg', 4),
     (N'tpowell', N'password', N'Trent', N'Powell', N'https://pub-static.fotor.com/assets/projects/pages/d5bdd0513a0740a8a38752dbc32586d0/fotor-03d1a91a0cec4542927f53c87e0599f6.jpg', 3),
     (N'whackemer', N'password', N'Will', N'Hackemer', N'https://marketplace.canva.com/EAE2_HrPNRU/1/0/1600w/canva-mascot-character-twitch-profile-picture-jF0b61iv4pQ.jpg', 2);
+    (N'jmhervey', N'password', N'Joel', N'Hervey', N'https://en.gravatar.com/userimage/130113805/8f4886f06ab591b9653f5b7b820d6a4e?size=512', 2);
 
 INSERT KSUConnect.Posts(UserId, Content)
 VALUES
