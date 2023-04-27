@@ -33,7 +33,7 @@ VALUES
     (N'Philosophy'),
     (N'Psychology'),
     (N'Sociology'),
-    (N'Theatre'),
+    (N'Electrical Engineering'),
     (N'Nuclear Engineering'),
     (N'Biology')
 
