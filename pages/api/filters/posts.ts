@@ -34,19 +34,38 @@ export default async function handler( req: NextApiRequest, res: NextApiResponse
 	]
 
 	const results = await executeQuery( `
-		SELECT P.PostId, P.Content, P.UserId
+		SELECT P.PostId, P.Content, P.UserId, P.CreatedOn, P.UpdatedOn,
+			(
+				SELECT ROUND(COUNT(*) / 10, 0) + 1
+				FROM KSUConnect.Posts P
+					INNER JOIN KSUConnect.Users U ON P.UserId = U.UserId
+					INNER JOIN KSUConnect.SchoolStatuses SS ON SS.SchoolStatusId = U.SchoolStatusId
+				WHERE (@status = N'' OR SS.[Status] = @status)
+				AND (@content = N'' OR P.Content LIKE '%' + @content + '%')
+				AND (@category = N'' OR 
+					@category IN
+						(
+							SELECT C.[Name] 
+							FROM KSUConnect.PostCategories PC
+								INNER JOIN KSUConnect.Categories C ON C.CategoryId = PC.CategoryId
+							WHERE PC.PostId = P.PostId
+						))
+			) as PageCount
 		FROM KSUConnect.Posts P
 			INNER JOIN KSUConnect.Users U ON P.UserId = U.UserId
-		WHERE (@status = N'' OR U.SchoolStatusId = @status)
+			INNER JOIN KSUConnect.SchoolStatuses SS ON SS.SchoolStatusId = U.SchoolStatusId
+		WHERE (@status = N'' OR SS.[Status] = @status)
 		AND (@content = N'' OR P.Content LIKE '%' + @content + '%')
 		AND (@category = N'' OR 
 			@category IN
 				(
-					SELECT PC.CategoryId 
+					SELECT C.[Name] 
 					FROM KSUConnect.PostCategories PC
+						INNER JOIN KSUConnect.Categories C ON C.CategoryId = PC.CategoryId
 					WHERE PC.PostId = P.PostId
 				))
 		ORDER BY P.CreatedOn DESC
+		OFFSET ((@page - 1) * @pageSize) ROWS FETCH NEXT 10 ROWS ONLY;
 	`, params )
 
 	const posts: Post[] = []
