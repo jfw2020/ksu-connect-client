@@ -22,5 +22,9 @@ VALUES
     (N'Campus News'),
     (N'Music'),
     (N'Theatre'),
-    (N'KSU Band')
-    (N'KSU Clubs')
+    (N'KSU Band'),
+    (N'Student Clubs'),
+    (N'Student Government'),
+    (N'Awards & Accolades'),
+    (N'Alumni'),
+    (N'Diversity & Inclusion')
