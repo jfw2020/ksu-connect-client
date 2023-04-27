@@ -281,7 +281,7 @@ function Chart() {
 	 */
 	return (
 		<Bar 
-			height={500}
+			height={300}
 			options={{
 				plugins: {
 					colors: {
