@@ -1365,7 +1365,7 @@ insert into KSUConnect.UserCategories (UserId, CategoryId) values
     (40, 6),
     (78, 21),
     (21, 34),
-    (35, 35),
+    (35, 17),
     (36, 16),
     (45, 2),
     (29, 34),
