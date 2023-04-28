@@ -7,7 +7,7 @@ DECLARE @limit INT = 1;
 DECLARE @userCount INT;
 SELECT @userCount = COUNT(*) FROM KSUConnect.Users;
 
-WHILE @limit <= (@userCount/2)
+WHILE @limit <= @userCount
 BEGIN
     DECLARE @followerId INT = (SELECT TOP 1 UserId FROM KSUConnect.Users ORDER BY NEWID());
     DECLARE @followingId INT = (SELECT TOP 1 UserId FROM KSUConnect.Users WHERE UserId != @followerId ORDER BY NEWID());

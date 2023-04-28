@@ -35,10 +35,14 @@ export async function getFeed( userId: string ) {
 
 	let results = await executeQuery( `
 		SELECT P.PostId, P.UserId, P.Content, P.CreatedOn, P.UpdatedOn
-		FROM KSUConnect.Followers F
-			INNER JOIN KSUConnect.Posts P ON P.UserId = F.FollowingId
-		WHERE F.FollowerId = @userId
-			OR P.UserId = @userId
+		FROM KSUConnect.Posts P
+		WHERE P.UserId = @userId
+			OR P.UserId IN
+			(
+				SELECT F.FollowingId
+				FROM KSUConnect.Followers F
+				WHERE F.FollowerId = @userId
+			)
 		ORDER BY P.CreatedOn DESC
 	`, params )
 

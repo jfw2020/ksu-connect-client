@@ -194,6 +194,7 @@ export default function UserPage( props: UserPageProps ) {
 									<Typography variant="h4">{props.user.firstName} {props.user.lastName}</Typography>
 									<Typography variant="subtitle1">{getMajorsText( props.user.majors )}</Typography>
 									<Typography variant="caption">{followerIds.length} followers</Typography>
+									<Typography variant="caption">{posts.length} posts</Typography>
 								</Stack>
 							</Box>
 							<Divider />

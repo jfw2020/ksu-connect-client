@@ -227,7 +227,7 @@ function DiscoverPanel() {
 	// Whenever one of the filters changes, queries the DB for users that match
 	React.useEffect( () => {
 		const fetchUsers = async () => {
-			const response = await axios.post( "/api/filters", {
+			const response = await axios.post( "/api/filters/users", {
 				status,
 				major,
 				category,

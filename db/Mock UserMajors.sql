@@ -1,500 +1,501 @@
-insert into KSUConnect.UserMajors (UserId, MajorId) values (32, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (75, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (51, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (65, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (42, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (24, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (83, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (86, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (23, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (11, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (90, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (64, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (82, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (8, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (89, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (11, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (55, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (77, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (98, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (70, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (12, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (41, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (16, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (23, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (103, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (94, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (99, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (101, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (51, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (44, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (85, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (23, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (58, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (76, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (64, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (66, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (59, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (80, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (18, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (64, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (37, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (98, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (97, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (79, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (8, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (66, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (5, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (12, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (88, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (8, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (76, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (96, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (9, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (80, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (22, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (100, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (57, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (83, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (6, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (91, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (64, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (5, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (87, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (57, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (77, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (100, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (32, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (93, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (57, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (10, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (68, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (102, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (54, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (46, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (83, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (75, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (64, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (74, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (33, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (23, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (56, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (75, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (20, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (96, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (64, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (19, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (40, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (35, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (18, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (100, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (92, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (69, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (13, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (102, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (19, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (81, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (71, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (35, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (27, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (92, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (8, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (38, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (50, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (74, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (19, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (30, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (89, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (61, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (53, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (9, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (104, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (21, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (35, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (31, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (32, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (104, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (82, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (31, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (17, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (14, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (45, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (39, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (82, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (82, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (55, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (89, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (54, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (35, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (44, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (104, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (24, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (100, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (33, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (71, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (88, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (59, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (46, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (96, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (68, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (32, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (63, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (57, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (89, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (84, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (19, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (61, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (61, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (82, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (11, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (93, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (22, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (67, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (37, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (99, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (85, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (43, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (10, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (83, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (8, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (8, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (79, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (10, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (51, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (5, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (68, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (28, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (71, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (36, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (82, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (93, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (26, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (90, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (99, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (20, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (20, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (75, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (27, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (98, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (53, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (73, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (57, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (62, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (70, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (61, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (57, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (90, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (16, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (43, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (78, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (37, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (36, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (45, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (31, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (21, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (40, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (39, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (98, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (64, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (40, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (8, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (9, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (100, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (22, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (25, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (73, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (12, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (79, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (62, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (57, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (18, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (19, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (97, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (67, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (99, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (44, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (92, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (37, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (91, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (60, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (89, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (8, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (12, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (99, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (22, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (61, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (60, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (7, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (94, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (19, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (101, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (69, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (76, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (26, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (5, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (41, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (77, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (71, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (88, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (32, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (81, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (83, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (76, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (29, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (5, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (95, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (77, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (86, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (63, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (8, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (17, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (54, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (19, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (13, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (86, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (59, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (68, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (45, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (12, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (9, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (70, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (50, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (104, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (25, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (13, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (75, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (30, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (48, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (13, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (76, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (21, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (78, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (83, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (83, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (6, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (53, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (15, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (71, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (31, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (14, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (76, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (93, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (30, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (64, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (84, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (84, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (78, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (55, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (43, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (62, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (84, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (102, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (76, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (43, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (32, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (78, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (14, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (70, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (10, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (73, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (24, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (78, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (88, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (47, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (20, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (35, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (95, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (47, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (73, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (69, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (18, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (81, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (6, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (100, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (84, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (12, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (70, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (84, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (72, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (55, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (90, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (104, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (19, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (65, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (26, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (68, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (78, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (71, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (82, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (53, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (38, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (53, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (66, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (67, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (33, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (51, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (5, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (36, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (69, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (67, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (8, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (77, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (27, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (103, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (96, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (70, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (102, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (99, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (27, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (55, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (43, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (90, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (40, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (54, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (14, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (92, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (83, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (97, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (46, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (33, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (62, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (49, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (51, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (86, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (37, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (28, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (71, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (101, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (85, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (55, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (88, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (81, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (30, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (7, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (15, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (91, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (64, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (44, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (41, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (98, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (21, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (60, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (19, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (48, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (87, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (55, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (76, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (30, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (68, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (30, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (14, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (54, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (78, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (24, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (75, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (45, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (41, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (12, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (101, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (43, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (56, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (35, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (89, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (13, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (101, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (39, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (6, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (63, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (27, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (61, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (16, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (60, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (100, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (39, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (84, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (26, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (77, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (92, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (55, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (93, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (43, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (34, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (83, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (23, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (34, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (82, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (68, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (87, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (80, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (32, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (50, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (55, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (96, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (65, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (36, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (44, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (46, 17);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (40, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (33, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (27, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (90, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (12, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (13, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (66, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (43, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (40, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (54, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (18, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (33, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (36, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (84, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (72, 10);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (48, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (41, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (10, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (104, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (80, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (32, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (24, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (68, 9);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (39, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (41, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (45, 4);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (67, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (63, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (13, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (102, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (73, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (65, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (92, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (55, 1);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (34, 2);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (91, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (67, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (89, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (34, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (81, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (87, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (99, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (61, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (104, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (38, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (13, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (89, 18);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (102, 19);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (48, 14);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (11, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (53, 7);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (37, 13);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (38, 6);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (74, 16);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (27, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (13, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (15, 3);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (45, 15);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (42, 20);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (78, 5);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (33, 8);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (104, 11);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (37, 12);
-insert into KSUConnect.UserMajors (UserId, MajorId) values (35, 9);
+insert into KSUConnect.UserMajors (UserId, MajorId) values 
+    (32, 9),
+    (75, 19),
+    (51, 3),
+    (65, 16),
+    (42, 4),
+    (24, 19),
+    (83, 18),
+    (86, 20),
+    (23, 16),
+    (11, 14),
+    (90, 17),
+    (64, 19),
+    (82, 13),
+    (8, 16),
+    (89, 13),
+    (11, 17),
+    (55, 6),
+    (77, 19),
+    (98, 8),
+    (70, 20),
+    (12, 2),
+    (41, 3),
+    (16, 11),
+    (23, 19),
+    (103, 20),
+    (94, 20),
+    (99, 16),
+    (101, 8),
+    (51, 10),
+    (44, 14),
+    (85, 20),
+    (23, 9),
+    (58, 15),
+    (76, 19),
+    (64, 2),
+    (66, 8),
+    (59, 1),
+    (80, 1),
+    (18, 14),
+    (64, 19),
+    (37, 12),
+    (98, 11),
+    (97, 12),
+    (79, 5),
+    (8, 14),
+    (66, 7),
+    (5, 17),
+    (12, 16),
+    (88, 15),
+    (8, 11),
+    (76, 3),
+    (96, 20),
+    (9, 6),
+    (80, 4),
+    (22, 8),
+    (100, 18),
+    (57, 3),
+    (83, 2),
+    (6, 7),
+    (91, 7),
+    (64, 2),
+    (5, 10),
+    (87, 4),
+    (57, 1),
+    (77, 15),
+    (100, 11),
+    (32, 16),
+    (93, 5),
+    (57, 6),
+    (10, 8),
+    (68, 5),
+    (102, 8),
+    (54, 9),
+    (46, 4),
+    (83, 3),
+    (75, 18),
+    (64, 19),
+    (74, 20),
+    (33, 5),
+    (23, 8),
+    (56, 6),
+    (75, 19),
+    (20, 10),
+    (96, 2),
+    (64, 12),
+    (19, 20),
+    (40, 6),
+    (35, 14),
+    (18, 18),
+    (100, 6),
+    (92, 16),
+    (69, 16),
+    (13, 5),
+    (102, 20),
+    (19, 20),
+    (81, 19),
+    (71, 13),
+    (35, 14),
+    (27, 5),
+    (92, 9),
+    (8, 8),
+    (38, 1),
+    (50, 8),
+    (74, 4),
+    (19, 12),
+    (30, 11),
+    (89, 7),
+    (61, 3),
+    (53, 12),
+    (9, 18),
+    (104, 4),
+    (21, 7),
+    (35, 17),
+    (31, 3),
+    (32, 4),
+    (104, 7),
+    (82, 19),
+    (31, 3),
+    (17, 3),
+    (14, 7),
+    (45, 4),
+    (39, 4),
+    (82, 20),
+    (82, 7),
+    (55, 18),
+    (89, 18),
+    (54, 11),
+    (35, 18),
+    (44, 15),
+    (104, 2),
+    (24, 4),
+    (100, 19),
+    (33, 3),
+    (71, 19),
+    (88, 8),
+    (59, 8),
+    (46, 18),
+    (96, 18),
+    (68, 7),
+    (32, 15),
+    (63, 19),
+    (57, 16),
+    (89, 7),
+    (84, 15),
+    (19, 9),
+    (61, 20),
+    (61, 15),
+    (82, 1),
+    (11, 10),
+    (93, 4),
+    (22, 6),
+    (67, 12),
+    (37, 1),
+    (99, 20),
+    (85, 6),
+    (43, 10),
+    (10, 1),
+    (83, 13),
+    (8, 19),
+    (8, 8),
+    (79, 5),
+    (10, 7),
+    (51, 7),
+    (5, 4),
+    (68, 14),
+    (28, 12),
+    (71, 16),
+    (36, 16),
+    (82, 1),
+    (93, 7),
+    (26, 12),
+    (90, 13),
+    (99, 3),
+    (20, 7),
+    (20, 6),
+    (75, 16),
+    (27, 19),
+    (98, 10),
+    (53, 11),
+    (73, 16),
+    (57, 11),
+    (62, 3),
+    (70, 2),
+    (61, 12),
+    (57, 10),
+    (90, 6),
+    (16, 2),
+    (43, 5),
+    (78, 11),
+    (37, 4),
+    (36, 6),
+    (45, 20),
+    (31, 14),
+    (21, 13),
+    (40, 8),
+    (39, 14),
+    (98, 1),
+    (64, 2),
+    (40, 4),
+    (8, 15),
+    (9, 16),
+    (100, 13),
+    (22, 17),
+    (25, 11),
+    (73, 7),
+    (12, 10),
+    (79, 7),
+    (62, 13),
+    (57, 12),
+    (18, 14),
+    (19, 19),
+    (97, 10),
+    (67, 18),
+    (99, 3),
+    (44, 2),
+    (92, 18),
+    (37, 11),
+    (91, 5),
+    (60, 13),
+    (89, 17),
+    (8, 7),
+    (12, 13),
+    (99, 3),
+    (22, 12),
+    (61, 14),
+    (60, 2),
+    (7, 15),
+    (94, 2),
+    (19, 7),
+    (101, 2),
+    (69, 9),
+    (76, 14),
+    (26, 7),
+    (5, 15),
+    (41, 6),
+    (77, 15),
+    (71, 16),
+    (88, 6),
+    (32, 17),
+    (81, 1),
+    (83, 6),
+    (76, 3),
+    (29, 17),
+    (5, 4),
+    (95, 7),
+    (77, 5),
+    (86, 4),
+    (63, 7),
+    (8, 2),
+    (17, 14),
+    (54, 8),
+    (19, 17),
+    (13, 11),
+    (86, 3),
+    (59, 3),
+    (68, 9),
+    (45, 12),
+    (12, 5),
+    (9, 7),
+    (70, 6),
+    (50, 13),
+    (104, 17),
+    (25, 9),
+    (13, 7),
+    (75, 3),
+    (30, 19),
+    (48, 8),
+    (13, 12),
+    (76, 20),
+    (21, 18),
+    (78, 2),
+    (83, 18),
+    (83, 1),
+    (6, 18),
+    (53, 17),
+    (15, 15),
+    (71, 17),
+    (31, 5),
+    (14, 8),
+    (76, 18),
+    (93, 20),
+    (30, 11),
+    (64, 10),
+    (84, 16),
+    (84, 20),
+    (78, 12),
+    (55, 18),
+    (43, 14),
+    (62, 13),
+    (84, 13),
+    (102, 5),
+    (76, 4),
+    (43, 20),
+    (32, 7),
+    (78, 8),
+    (14, 15),
+    (70, 20),
+    (10, 15),
+    (73, 16),
+    (24, 17),
+    (78, 17),
+    (88, 1),
+    (47, 3),
+    (20, 10),
+    (35, 8),
+    (95, 4),
+    (47, 14),
+    (73, 5),
+    (69, 18),
+    (18, 16),
+    (81, 19),
+    (6, 9),
+    (100, 14),
+    (84, 1),
+    (12, 10),
+    (70, 2),
+    (84, 4),
+    (72, 7),
+    (55, 4),
+    (90, 6),
+    (104, 17),
+    (19, 11),
+    (65, 17),
+    (26, 11),
+    (68, 8),
+    (78, 3),
+    (71, 19),
+    (82, 19),
+    (53, 15),
+    (38, 13),
+    (53, 16),
+    (66, 17),
+    (67, 15),
+    (33, 7),
+    (51, 3),
+    (5, 1),
+    (36, 3),
+    (69, 12),
+    (67, 3),
+    (8, 20),
+    (77, 18),
+    (27, 15),
+    (103, 17),
+    (96, 19),
+    (70, 12),
+    (102, 19),
+    (99, 8),
+    (27, 1),
+    (55, 1),
+    (43, 10),
+    (90, 11),
+    (40, 2),
+    (54, 9),
+    (14, 3),
+    (92, 17),
+    (83, 5),
+    (97, 12),
+    (46, 10),
+    (33, 8),
+    (62, 13),
+    (49, 10),
+    (51, 7),
+    (86, 10),
+    (37, 3),
+    (28, 6),
+    (71, 3),
+    (101, 1),
+    (85, 7),
+    (55, 5),
+    (88, 17),
+    (81, 1),
+    (30, 16),
+    (7, 20),
+    (15, 7),
+    (91, 19),
+    (64, 3),
+    (44, 5),
+    (41, 14),
+    (98, 4),
+    (21, 4),
+    (60, 12),
+    (19, 6),
+    (48, 14),
+    (87, 20),
+    (55, 15),
+    (76, 6),
+    (30, 19),
+    (68, 5),
+    (30, 18),
+    (14, 6),
+    (54, 13),
+    (78, 12),
+    (24, 11),
+    (75, 7),
+    (45, 18),
+    (41, 12),
+    (12, 6),
+    (101, 13),
+    (43, 3),
+    (56, 13),
+    (35, 1),
+    (89, 16),
+    (13, 9),
+    (101, 3),
+    (39, 10),
+    (6, 15),
+    (63, 20),
+    (27, 15),
+    (61, 16),
+    (16, 13),
+    (60, 19),
+    (100, 8),
+    (39, 15),
+    (84, 1),
+    (26, 4),
+    (77, 18),
+    (92, 20),
+    (55, 3),
+    (93, 4),
+    (43, 3),
+    (34, 13),
+    (83, 20),
+    (23, 13),
+    (34, 2),
+    (82, 10),
+    (68, 20),
+    (87, 18),
+    (80, 12),
+    (32, 1),
+    (50, 9),
+    (55, 17),
+    (96, 18),
+    (65, 14),
+    (36, 20),
+    (44, 14),
+    (46, 17),
+    (40, 19),
+    (33, 3),
+    (27, 20),
+    (90, 5),
+    (12, 19),
+    (13, 14),
+    (66, 14),
+    (43, 1),
+    (40, 4),
+    (54, 19),
+    (18, 5),
+    (33, 7),
+    (36, 16),
+    (84, 16),
+    (72, 10),
+    (48, 15),
+    (41, 6),
+    (10, 8),
+    (104, 9),
+    (80, 3),
+    (32, 12),
+    (24, 12),
+    (68, 9),
+    (39, 14),
+    (41, 14),
+    (45, 4),
+    (67, 1),
+    (63, 5),
+    (13, 1),
+    (102, 3),
+    (73, 11),
+    (65, 16),
+    (92, 2),
+    (55, 1),
+    (34, 2),
+    (91, 5),
+    (67, 18),
+    (89, 3),
+    (34, 8),
+    (81, 18),
+    (87, 20),
+    (99, 6),
+    (61, 12),
+    (104, 3),
+    (38, 19),
+    (13, 16),
+    (89, 18),
+    (102, 19),
+    (48, 14),
+    (11, 8),
+    (53, 7),
+    (37, 13),
+    (38, 6),
+    (74, 16),
+    (27, 8),
+    (13, 20),
+    (15, 3),
+    (45, 15),
+    (42, 20),
+    (78, 5),
+    (33, 8),
+    (104, 11),
+    (37, 12),
+    (35, 9);
