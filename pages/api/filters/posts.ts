@@ -4,6 +4,13 @@ import { NextApiRequest, NextApiResponse } from "next"
 import { getUser } from "../users/[userId]"
 import { Post } from "@/types/postType"
 
+/**
+ * /api/filters/posts
+ * 
+ * POST:
+ * Allows the user to send any combination of status, content, and category and returns
+ * a list of Posts that matches that query
+ */
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const {
 		body

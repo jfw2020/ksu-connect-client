@@ -6,6 +6,7 @@ import { getMajors, getCategories } from "../users/[userId]"
 /**
  * /api/filters/users
  * 
+ * POST:
  * Allows the user to send any combination of status, major, and category and returns
  * a list of Users that matches that query
  */

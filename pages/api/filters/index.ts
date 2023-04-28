@@ -4,6 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next"
 /**
  * /api/filters
  * 
+ * GET:
  * Returns a list of all the SchoolStatuses, Majors, and Categories from the DB
  */
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {

@@ -15,6 +15,7 @@ import { getFollowingIds } from "../api/following/[userId]"
 import { withIronSessionSsr } from "iron-session/next"
 import { sessionOptions } from "@/lib/session"
 import { getFollowerIds } from "../api/followers/[userId]"
+import AddCategoriesModal from "@/components/AddCategoriesModal"
 
 /**
  * Props for the UserPage component
@@ -78,6 +79,10 @@ export default function UserPage( props: UserPageProps ) {
 	const [followingIds, setFollowingIds] = React.useState( props.followingIds )
 	// State to hold the ids that that follow the user
 	const [followerIds, setFollowerIds] = React.useState( props.followerIds )
+	// State to hold the categories the user is interested in
+	const [categories, setCategories] = React.useState( props.user.categories )
+	// State to hold if the modal is open
+	const [modalOpen, setModalOpen] = React.useState( false )
 
 	/**
 	 * Callbacks
@@ -107,6 +112,15 @@ export default function UserPage( props: UserPageProps ) {
 		setPosts( prevState => prevState.filter( post => post.postId !== postId ) )
 	}, [] )
 
+	// Adds categories to a user's profile
+	const handleAddCategories = React.useCallback( async ( newCategories: string[] ) => {
+		await axios.post( "/api/categories", {
+			categories: newCategories
+		} )
+
+		setCategories( [...categories, ...newCategories] )
+	}, [categories] )
+
 	/**
 	 * Effects
 	 */
@@ -131,10 +145,11 @@ export default function UserPage( props: UserPageProps ) {
 		} )
 	}, [dispatch, props.user.userId] )
 
-	// Whenever props.followerIds changes, we need to update the followerIds state
+	// Whenever props.followerIds or props.categories changes, we need to update the followerIds and categories states
 	React.useEffect( () => {
 		setFollowerIds( props.followerIds )
-	}, [props.followerIds] )
+		setCategories( props.user.categories )
+	}, [props.followerIds, props.user.categories] )
 
 	/**
 	 * Render Variables
@@ -159,6 +174,13 @@ export default function UserPage( props: UserPageProps ) {
 			</Head>
 			<main>
 				<Grid container columnSpacing={2}>
+					<AddCategoriesModal 
+						open={modalOpen}
+						onClose={() => setModalOpen( false )}
+						user={props.user}
+						onAddCategories={handleAddCategories}
+						categories={categories}
+					/>
 					<Grid item xs={8}>
 						<Stack gap={2}>
 							<Box
@@ -195,6 +217,22 @@ export default function UserPage( props: UserPageProps ) {
 									<Typography variant="subtitle1">{getMajorsText( props.user.majors )}</Typography>
 									<Typography variant="caption">{followerIds.length} followers</Typography>
 									<Typography variant="caption">{posts.length} posts</Typography>
+									<Box
+										sx={{
+											display: "flex",
+											justifyContent: "space-between"
+										}}
+									>
+										<Typography variant="h6">Interests</Typography>
+										{props.user.userId === user?.userId && (
+											<Button variant="contained" onClick={() => setModalOpen( true )}>Add</Button>
+										)}
+									</Box>
+									<Stack>
+										{categories.map( category => (
+											<Typography variant="caption" key={category}>{category}</Typography>
+										) )}
+									</Stack>
 								</Stack>
 							</Box>
 							<Divider />

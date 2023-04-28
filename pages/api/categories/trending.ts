@@ -1,6 +1,12 @@
 import executeQuery from "@/lib/db"
 import { NextApiRequest, NextApiResponse } from "next"
 
+/**
+ * /api/categories/trending
+ * 
+ * GET:
+ * Returns the top 3 categories with the most posts
+ */
 export default async function handler( req: NextApiRequest, res: NextApiResponse ) {
 	const results = await executeQuery( `
 		SELECT TOP(3) C.[Name], COUNT(*) AS NumPosts

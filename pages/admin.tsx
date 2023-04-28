@@ -36,11 +36,7 @@ ChartJS.register(
  * This component is only available to the admin. It allows 
  * them to make various aggregating queries.
  */
-export default function NetworkPage() {
-	/**
-	 * State
-	 */
-
+export default function AdminPage() {
 	/**
 	 * Render
 	 */
