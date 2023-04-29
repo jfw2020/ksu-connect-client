@@ -36,3 +36,7 @@ Then, run the development server:
 ```bash
 npm run dev
 ```
+
+## Credentials
+Username: jfw2020
+Password: password
